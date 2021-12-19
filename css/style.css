@@ -5,11 +5,14 @@
     --primary-light-color: #5654b3;
     --secondary-color: #fa676d;
     --alice-blue: #e3f0ff;
+
+    --box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 a{
     color: var(--primary-color);
@@ -27,14 +30,8 @@ button{
     padding: 0 16px;
     margin: 0 auto;
 }
-.container-second{
-    max-width: 1320px;
-    padding: 0 16px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
+
 #header{
     min-height: 100vh;
     background-color: var(--alice-blue);
@@ -342,3 +339,83 @@ button{
         margin-bottom: 30px;
     }
 }
+
+/* login page */
+#header-second{
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+.container-second{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    transition-duration: 1s;
+}
+
+ #right {
+    margin: auto;
+    width: 95%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  #loginLabel {
+    padding-top: 25%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+    color: var(--primary-color);
+    text-shadow: var(--box-shadow);
+  }
+  .client-info {
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    height: 50px;
+    border: solid #999 1px;
+    border-radius: 5px;
+    text-indent: 15px;
+    transition: all 200ms;
+    box-shadow: var(--box-shadow);
+  }
+  .client-info:focus {
+    width: 80%;
+  }
+  label {
+    position: absolute;
+    margin: -76px 130px;
+      font-size: 12px;
+      white-space: nowrap;
+      background: #fff;
+      padding: 0 5px;
+      color: #999;
+    transition: all 200ms;
+    text-shadow: var(--box-shadow);
+  }
+  #email:focus ~ label[for="email"] {
+    margin: -76px 70px;
+  }
+  #password:focus ~ label[for="password"] {
+    margin: -76px 70px;
+  }
+  #submit-login {
+    border: none;
+    background-color: var(--primary-light-color);
+    color: white;
+    width: 60%;
+  }
+  #submit-login:hover {
+    background-color: var(--secondary-color)
+  }
+
+/* end of login page */
