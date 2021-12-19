@@ -402,7 +402,7 @@ button{
     transition: all 200ms;
     text-shadow: var(--box-shadow);
   }
-  #email:focus ~ label[for="email"] {
+  #username:focus ~ label[for="email"] {
     margin: -76px 70px;
   }
   #password:focus ~ label[for="password"] {
