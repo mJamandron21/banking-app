@@ -6,7 +6,7 @@ export const navCollapseDiv = document.querySelector('.navbar-collapse');
 export const navLoginBtn = document.querySelector('.btn-start');
 
 //submit button on login page
-export const submitLogin = document.querySelector('.submit-login');
+export const submitLoginBtn = document.querySelector('#submit-login');
 
 //pages
 export const firstPage = document.querySelector('.first');

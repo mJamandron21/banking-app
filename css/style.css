@@ -320,6 +320,10 @@ button{
     overflow-x: hidden;
     display:none;
 }
+.third{
+    overflow-x: hidden;
+    display:none;
+}
 
 @media screen and (max-width: 480px){
     .form-item{
