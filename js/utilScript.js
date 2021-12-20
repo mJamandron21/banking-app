@@ -26,7 +26,6 @@ window.addEventListener('resize', () => {
     }, 400);
 });
 
-
 const toggleModalRegister = function () {
     modalRegister.classList.toggle("hidden");
     overlayRegister.classList.toggle("hidden");
