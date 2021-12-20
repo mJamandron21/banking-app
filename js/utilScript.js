@@ -1,12 +1,16 @@
 //buttons
 import {navToggleBtn} from './domVariables.js'
 import {navCollapseDiv} from './domVariables.js'
-import {navLoginBtn} from './domVariables.js'
-import { submitLoginBtn } from './domVariables.js'
-//pages
-import {firstPage} from './domVariables.js'
-import {secondPage} from './domVariables.js'
-import {thirdPage} from './domVariables.js'
+//modal register
+import {modalRegister} from './domVariables.js'
+import {btnOpenModalRegister} from './domVariables.js'
+import {btnCloseModalRegister} from './domVariables.js'
+import {overlayRegister} from './domVariables.js'
+//modal login
+import {modalLogin} from './domVariables.js'
+import {btnOpenModalLogin} from './domVariables.js'
+import {btnCloseModalLogin} from './domVariables.js'
+import {overlayLogin} from './domVariables.js'
 
 navToggleBtn.addEventListener('click', () => {
     navCollapseDiv.classList.toggle('showNavbar');
@@ -23,15 +27,18 @@ window.addEventListener('resize', () => {
 });
 
 
-navLoginBtn.addEventListener('click', function () {
-    firstPage.style.display = "none"
-    secondPage.style.display = "block"
-    thirdPage.style.display = "none"
-})
+const toggleModalRegister = function () {
+    modalRegister.classList.toggle("hidden");
+    overlayRegister.classList.toggle("hidden");
+  };
+btnOpenModalRegister.addEventListener("click", toggleModalRegister);
+btnCloseModalRegister.addEventListener("click", toggleModalRegister);
+overlayRegister.addEventListener("click", toggleModalRegister);
 
-submitLoginBtn.addEventListener('click', function () {
-    firstPage.style.display = "none"
-    secondPage.style.display = "none"
-    thirdPage.style.display = "block"
-})
-
+const toggleModalLogin = function () {
+    modalLogin.classList.toggle("hidden");
+    overlayLogin.classList.toggle("hidden");
+  };
+btnOpenModalLogin.addEventListener("click", toggleModalLogin);
+btnCloseModalLogin.addEventListener("click", toggleModalLogin);
+overlayLogin.addEventListener("click", toggleModalLogin);

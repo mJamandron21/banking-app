@@ -33,7 +33,8 @@
                         </ul>
 
                         <div class = "header-btns">
-                            <button class = "btn btn-start">Log in</button>
+                            <button class = "btn btn-start show-modal-login">Log in</button>
+                            <button class = "btn btn-register show-modal-register">Register</button>
                         </div>
                     </div>
                 </nav>
@@ -63,37 +64,131 @@
                     </div>
                 </div>
             </div>
+
+            <!-- the modal itself -->
+            <div class="modal-login hidden">
+                
+                <button class="close-modal-login">&times;</button>
+
+                <h1 id="LoginLabel">Login</h1><br>
+                <form action="">
+                    <div id="right">
+                    <input type="text" id="username-login" class="client-info">
+                    <label for="username-login">Username</label>
+                    <input type="password-login" id="password" class="client-info">
+                    <label for="password-login">Password</label>
+                    <input type="submit" id="submit-login" class="client-info" value="Submit">
+                    </div>
+                </form>
+            </div>
+            <div class="overlay-login hidden"></div>
+            <!--End of Login Modal-->
+
+             <!-- the modal itself -->
+            <div class="modal-register hidden">
+                
+                <button class="close-modal-register">&times;</button>
+
+                <h1 id="RegisterLabel">Register</h1><br>
+                <form action="">
+                    <div id="right">
+                    <input type="text" id="firstname" class="client-info">
+                    <label for="firstname">Firstname</label>
+                    <input type="text" id="lastname" class="client-info">
+                    <label for="lastname">Lastname</label>
+                    <input type="text" id="username-register" class="client-info">
+                    <label for="username-register">Username</label>
+                    <input type="password" id="password-register" class="client-info">
+                    <label for="password-register">Password</label>
+                    <input type="password" id="confirm-password-register" class="client-info">
+                    <label for="confirm-password-register">Confirm Password</label>
+                    <input type="submit" id="submit-register" class="client-info" value="Submit">
+                    </div>
+                </form>
+            </div>
+            <div class="overlay-register hidden"></div>
+            <!--End of Register Modal-->
         </header>
     </div>
     <!-- end of first -->
 
     <!--start of second-->
-    <div class = "second">
-        <header id = "header-second">
-           
-            <div class = "container-second">
-                <!-- login form-->
-                    <div id="right">
-                      <h1 id="loginLabel">LogIn</h1><br>
-                      <input type="text" id="username" class="client-info">
-                      <label for="username">Username</label>
-                      <input type="password" id="password" class="client-info">
-                      <label for="password">Password</label>
-                      <input type="submit" id="submit-login" class="client-info" value="Submit">
-                    </div>    
-
-            </div>
-            
-        </header>
-    </div>
+    <!-- <div class = "second">
+        
+    </div> -->
     <!--end of Second-->
 
     <!--start of Third-->
     <div class = "third">
-        <header id = "header-second">
-           
-           
+        <header id = "header">
+            <div class = "container">
+                <nav class = "navbar">
+                    <div class = "brand-and-toggler">
+                        <a href = "#" class = "navbar-brand" style="cursor: none;">Admin Dashboard</a>
+                    </div>
+                    <div class = "header-btns">
+                        <!-- <button class = "btn btn-AddUser show-modal">Add User</button> -->
+                        <button class = "btn btn-Logout">Log Out</button>
+                    </div>
+                </nav>
             
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Account No.</th>
+                            <th>Lastname</th>
+                            <th>Firstname</th>
+                            <th>Balance</th>
+                            <th>Member Since</th>
+                            <th>Status</th>
+                            <th>Role</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>091782947124</td>
+                            <td>Torres</td>
+                            <td>Dom</td>
+                            <td>6000</td>
+                            <td>December 15, 2021</td>
+                            <td>Active</td>
+                            <td>User</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>091782947124</td>
+                            <td>Torres</td>
+                            <td>Lucy</td>
+                            <td>6000</td>
+                            <td>December 15, 2021</td>
+                            <td>Active</td>
+                            <td>User</td>
+                        </tr>
+                        <tr>
+                            <td>091782947124</td>
+                            <td>Torres</td>
+                            <td>Lucy</td>
+                            <td>6000</td>
+                            <td>December 15, 2021</td>
+                            <td>Active</td>
+                            <td>User</td>
+                        </tr>
+                        <tr>
+                            <td>091782947124</td>
+                            <td>Torres</td>
+                            <td>Lucy</td>
+                            <td>6000</td>
+                            <td>December 15, 2021</td>
+                            <td>Active</td>
+                            <td>User</td>
+                        </tr>
+                        <!-- and so on... -->
+                    </tbody>
+                </table>
+        
+            </div>
+
         </header>
     </div>
     <!--end of third-->

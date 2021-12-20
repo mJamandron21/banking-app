@@ -93,6 +93,19 @@ button{
 .btn.btn-start:hover{
     background-color: var(--secondary-color);
 }
+.btn.btn-Logout{
+    background-color: var(--primary-light-color);
+}
+.btn.btn-Logout:hover{
+    background-color: var(--secondary-color);
+}
+
+.btn.btn-register{
+    background-color: var(--primary-light-color);
+}
+.btn.btn-register:hover{
+    background-color: var(--secondary-color);
+}
 
 /* banner */
 .banner{
@@ -345,7 +358,7 @@ button{
 }
 
 /* login page */
-#header-second{
+/* #header-second{
     min-height: 100vh;
     background-color: var(--primary-color);
 }
@@ -420,6 +433,239 @@ button{
   }
   #submit-login:hover {
     background-color: var(--secondary-color)
-  }
+  } */
 
 /* end of login page */
+
+/*start of Dashboard */
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 100%;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: var(--primary-light-color);
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #5654b3;
+}
+
+/*modal register*/
+#right {
+    margin: auto;
+    width: 95%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.modal-register {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    padding: 4rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+  
+#RegisterLabel {
+    padding-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+    color: var(--primary-color);
+    text-shadow: var(--box-shadow);
+}
+
+label {
+    position: absolute;
+    margin: -76px 130px;
+      font-size: 12px;
+      white-space: nowrap;
+      background: #fff;
+      padding: 0 5px;
+      color: #999;
+    transition: all 200ms;
+    text-shadow: var(--box-shadow);
+}
+#firstname:focus ~ label[for="firstname"] {
+    margin: -76px 70px;
+}
+#lastname:focus ~ label[for="lastname"] {
+    margin: -76px 70px;
+}
+#username-register:focus ~ label[for="username-register"] {
+    margin: -76px 70px;
+}
+#password-register:focus ~ label[for="password-register"] {
+    margin: -76px 70px;
+}
+#confirm-password-register:focus ~ label[for="confirm-password-register"] {
+    margin: -76px 70px;
+}
+#submit-register {
+    border: none;
+    background-color: var(--primary-light-color);
+    color: white;
+    width: 60%;
+}
+#submit-register:hover {
+    background-color: var(--secondary-color)
+}
+.client-info {
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    height: 50px;
+    border: solid #999 1px;
+    border-radius: 5px;
+    text-indent: 15px;
+    transition: all 200ms;
+    box-shadow: var(--box-shadow);
+}
+.client-info:focus {
+    width: 80%;
+}  
+.overlay-register {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+}
+  
+.close-modal-register {
+    position: absolute;
+    top: 0.8rem;
+    right: 1.3rem;
+    font-size: 2.5rem;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+  
+/* CLASS TO HIDE MODAL */
+  .hidden {
+    display: none;
+}
+
+/*modal login*/
+#right {
+    margin: auto;
+    width: 95%;
+    height: 100%;
+    border-radius: 10px;
+}
+.modal-login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 4rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+#LoginLabel {
+    padding-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+    color: var(--primary-color);
+    text-shadow: var(--box-shadow);
+}
+.client-info {
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    height: 50px;
+    border: solid #999 1px;
+    border-radius: 5px;
+    text-indent: 15px;
+    transition: all 200ms;
+    box-shadow: var(--box-shadow);
+}
+.client-info:focus {
+    width: 80%;
+}
+label {
+    position: absolute;
+    margin: -76px 130px;
+      font-size: 12px;
+      white-space: nowrap;
+      background: #fff;
+      padding: 0 5px;
+      color: #999;
+    transition: all 200ms;
+    text-shadow: var(--box-shadow);
+}
+#username-login:focus ~ label[for="username-login"] {
+    margin: -76px 70px;
+}
+
+#password-login:focus ~ label[for="password-login"] {
+    margin: -76px 70px;
+}
+#submit-login {
+    border: none;
+    background-color: var(--primary-light-color);
+    color: white;
+    width: 60%;
+}
+#submit-login:hover {
+    background-color: var(--secondary-color)
+}
+.overlay-login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+}
+  
+.close-modal-login {
+    position: absolute;
+    top: 0.8rem;
+    right: 1.3rem;
+    font-size: 2.5rem;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
