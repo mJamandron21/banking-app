@@ -660,3 +660,57 @@ label {
     border: none;
     background: none;
 }
+
+/*main html*/
+.grid{
+    display: grid;
+    grid-template-areas: 
+    "one one two three"
+    "one one four five"
+    "six six seven seven"
+    "six six seven seven";
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: (4, 1fr);
+    inline-size: 1300px;
+}
+
+.grid >*{
+    background-color: var(--alice-blue);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    padding: 10px;
+    height: 300px;
+}
+
+.one{
+    grid-area: one;
+}
+
+.two{
+    grid-area:two;
+    width: 315px;
+    height: 142px;
+}
+.three{
+    grid-area: three;
+    width: 315px;
+    height: 142px;
+}
+
+.four{
+    grid-area:four;
+    width: 315px;
+    height: 142px;
+}
+.five{
+    grid-area:five;
+    width: 315px;
+    height: 142px;
+}
+.six{
+    grid-area:six;
+}
+.seven{
+    grid-area:seven;
+}
