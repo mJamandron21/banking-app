@@ -663,6 +663,7 @@ label {
 
 /*main html*/
 .grid{
+    padding: 5px;
     display: grid;
     grid-template-areas: 
     "one one two three"
