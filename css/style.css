@@ -668,8 +668,8 @@ label {
     grid-template-areas: 
     "one one two three"
     "one one four five"
-    "six six seven seven"
-    "six six seven seven";
+    "six six six six"
+    "six six six six";
     gap: 10px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: (4, 1fr);
@@ -686,32 +686,171 @@ label {
 
 .one{
     grid-area: one;
+    /* background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%); */
+    background: rgb(250,103,109);
+    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
 }
 
 .two{
     grid-area:two;
     width: 315px;
     height: 142px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    cursor: pointer;
+    background: rgb(250,103,109);
+    background: linear-gradient(335deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); 
 }
 .three{
     grid-area: three;
     width: 315px;
     height: 142px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    cursor: pointer;
+    background: rgb(250,103,109);
+    background: linear-gradient(335deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
 }
 
 .four{
     grid-area:four;
     width: 315px;
     height: 142px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    cursor: pointer;
+    background: rgb(250,103,109);
+    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
 }
 .five{
     grid-area:five;
     width: 315px;
     height: 142px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    cursor: pointer;
+    background: rgb(250,103,109);
+    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
 }
 .six{
     grid-area:six;
+    position: relative;
+    /* background: rgb(250,103,109);
+    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
+    background-color: var(--primary-light-color);
 }
-.seven{
-    grid-area:seven;
+
+
+/*Hover on cards*/
+.two:hover,
+.three:hover,
+.four:hover,
+.five:hover{
+    transform: scale(1.1)
+}
+
+.one .balance{
+    font-size: 4rem;
+    color: white;
+    padding: 15px;
+} 
+.one .account-name{
+    padding-top: 90px;
+    padding-left: 30px;
+    color: white;
+}
+.one .footer{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    color: white;
+}
+.one .footer .account-number{
+    padding-left: 30px;
+}
+.one .footer .visa{
+    padding-right: 30px;
+}
+
+.six .header{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.six .add-board{
+    width: 1100px;
+    height: 100px;
+    margin:auto;
+    overflow-x: hidden;
+    margin-top: 50px;
+}
+.six .add-expense-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    color: white;
+    background: var(--primary-color);
+    border-radius: 10px;
+    border: 0;
+    transition: .5s;
+    position: absolute;
+    top: 25%;
+    left: 44%;
+}
+.six .add-expense-btn:hover{
+    background: var(--secondary-color);
+}
+
+.styled-table-expense {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 100%;
+    min-width: 400px;
+    overflow: hidden;
+    padding-top: 0;
+    
+}
+
+.styled-table-expense thead tr {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.styled-table-expense th,
+.styled-table-expense td {
+    padding: 12px 15px;
+    text-align: left;
+    color: white;
+}
+
+.styled-table-expense tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table-expense tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table-expense tbody tr:last-of-type {
+    border-bottom: 1px solid white;
 }
