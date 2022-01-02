@@ -81,6 +81,8 @@ button{
     border: 1px solid transparent;
     transition: all 0.3s ease-in-out;
 }
+
+/*buttons*/
 .btn.btn-login{
     color: var(--primary-color);
 }
@@ -94,7 +96,7 @@ button{
     background-color: var(--secondary-color);
 }
 .btn.btn-logout{
-    background-color: var(--primary-light-color);
+    background-color: var(--primary-color);
 }
 .btn.btn-logout:hover{
     background-color: var(--secondary-color);
@@ -136,6 +138,17 @@ button{
 .btn.btn-sendmoney:hover{
     transform: scale(1.1)
 }
+.btn.btn-profile{
+    background-color:transparent;
+    border: none;
+    width: 150px;
+    height: 100px;
+    
+}
+.btn.btn-profile:hover{
+    transform: scale(1.1)
+}
+
 /* banner */
 .banner{
     display: flex;
@@ -356,9 +369,11 @@ button{
 }
 .first{
     overflow-x: hidden;
+    /* display: none; */
 }
 .second{
     overflow-x: hidden;
+    display: none;
 }
 
 @media screen and (max-width: 480px){
@@ -694,6 +709,11 @@ label {
 }
 
 /*main html*/
+#header-second{
+    min-height: 100vh;
+    background: rgb(250,103,109);
+    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
+}
 .grid{
     padding: 5px;
     display: grid;
@@ -718,10 +738,10 @@ label {
 
 .one{
     grid-area: one;
-    /* background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%); */
-    background: rgb(250,103,109);
-    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
+    /* background: rgb(250,103,109);
+    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
 }
 
 .two{
@@ -734,8 +754,10 @@ label {
     color: white;
     font-size: 1.5rem;
     font-weight: lighter;
-    background: rgb(250,103,109);
-    background: linear-gradient(335deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); 
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
+    /* background: rgb(250,103,109);
+    background: linear-gradient(335deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);  */
 }
 .two .btn-deposit-label{
     color: white;
@@ -751,8 +773,10 @@ label {
     color: white;
     font-size: 1.5rem;
     font-weight: lighter;
-    background: rgb(250,103,109);
-    background: linear-gradient(335deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
+    /* background: rgb(250,103,109);
+    background: linear-gradient(335deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
 }
 .three .btn-withdraw-label{
     color: white;
@@ -769,8 +793,10 @@ label {
     color: white;
     font-size: 1.5rem;
     font-weight: lighter;
-    background: rgb(250,103,109);
-    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
+    /* background: rgb(250,103,109);
+    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
 }
 .four .btn-sendmoney-label{
     color: white;
@@ -787,15 +813,21 @@ label {
     font-size: 1.5rem;
     font-weight: lighter;
     cursor: pointer;
-    background: rgb(250,103,109);
-    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
+    /* background: rgb(250,103,109);
+    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
+}
+.five .btn-profile-label{
+    color: white;
+    font-size: 1rem;
 }
 .six{
     grid-area:six;
     position: relative;
-    /* background: rgb(250,103,109);
-    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
-    background-color: var(--primary-light-color);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
+    /* background-color: var(--primary-light-color); */
 }
 
 
@@ -803,9 +835,9 @@ label {
 /* .two:hover, */
 /* .three:hover, */
 /* .four:hover, */
-.five:hover{
+/* .five:hover{
     transform: scale(1.1)
-}
+} */
 
 .one .balance{
     font-size: 4rem;
@@ -848,7 +880,7 @@ label {
     padding: 10px 30px;
     cursor: pointer;
     color: white;
-    background: var(--primary-color);
+    background: var(--primary-light-color);
     border-radius: 10px;
     border: 0;
     transition: .5s;
