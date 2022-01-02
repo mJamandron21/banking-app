@@ -93,10 +93,10 @@ button{
 .btn.btn-start:hover{
     background-color: var(--secondary-color);
 }
-.btn.btn-Logout{
+.btn.btn-logout{
     background-color: var(--primary-light-color);
 }
-.btn.btn-Logout:hover{
+.btn.btn-logout:hover{
     background-color: var(--secondary-color);
 }
 
@@ -105,6 +105,16 @@ button{
 }
 .btn.btn-register:hover{
     background-color: var(--secondary-color);
+}
+.btn.btn-deposit{
+    background-color:transparent;
+    border: none;
+    width: 150px;
+    height: 100px;
+    
+}
+.btn.btn.btn-deposit:hover{
+    transform: scale(1.1)
 }
 
 /* banner */
@@ -702,9 +712,12 @@ label {
     color: white;
     font-size: 1.5rem;
     font-weight: lighter;
-    cursor: pointer;
     background: rgb(250,103,109);
     background: linear-gradient(335deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); 
+}
+.two .btn-deposit-label{
+    color: white;
+    font-size: 1rem;
 }
 .three{
     grid-area: three;
@@ -759,7 +772,7 @@ label {
 
 
 /*Hover on cards*/
-.two:hover,
+/* .two:hover, */
 .three:hover,
 .four:hover,
 .five:hover{
@@ -854,3 +867,93 @@ label {
 .styled-table-expense tbody tr:last-of-type {
     border-bottom: 1px solid white;
 }
+
+/*modal deposit*/
+#right {
+    margin: auto;
+    width: 95%;
+    height: 100%;
+    border-radius: 10px;
+}
+.modal-deposit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 4rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+#DepositLabel {
+    padding-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+    color: var(--primary-color);
+    text-shadow: var(--box-shadow);
+}
+.client-info {
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    height: 50px;
+    border: solid #999 1px;
+    border-radius: 5px;
+    text-indent: 15px;
+    transition: all 200ms;
+    box-shadow: var(--box-shadow);
+}
+.client-info:focus {
+    width: 80%;
+}
+label {
+    position: absolute;
+    margin: -76px 130px;
+      font-size: 12px;
+      white-space: nowrap;
+      background: #fff;
+      padding: 0 5px;
+      color: #999;
+    transition: all 200ms;
+    text-shadow: var(--box-shadow);
+}
+#amount-deposit:focus ~ label[for="amount-deposit"] {
+    margin: -76px 70px;
+}
+
+#submit-deposit {
+    border: none;
+    background-color: var(--primary-light-color);
+    color: white;
+    width: 60%;
+}
+#submit-deposit:hover {
+    background-color: var(--secondary-color)
+}
+.overlay-deposit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+}
+  
+.close-modal-deposit {
+    position: absolute;
+    top: 0.8rem;
+    right: 1.3rem;
+    font-size: 2.5rem;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+

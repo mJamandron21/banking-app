@@ -19,7 +19,7 @@
                     </div>
                     <div class = "header-btns">
                         <!-- <button class = "btn btn-AddUser show-modal">Add User</button> -->
-                        <button class = "btn btn-Logout">Log Out</button>
+                        <button class = "btn btn-logout">Log Out</button>
                     </div>
                 </nav>
                 <!--Main Grid-->
@@ -33,17 +33,17 @@
                         </div>
                     </div>
                     <div class="two">
-                        <!-- <i class="fa fa-plus"></i> -->
-                        <img src="./images/icons8-deposit-32.png" alt="deposit" class="image">
-                        <div class="deposit">Deposit</div>
+                        <button class="btn btn-deposit show-modal-deposit"><img src="./images/icons8-deposit-32.png" alt="deposit"> <div class="btn-deposit-label">Deposit</div></button>
+                        <!-- <img src="./images/icons8-deposit-32.png" alt="deposit" class="image-deposit"> -->
+                        <!-- <div class="deposit">Deposit</div> -->
                     </div>
                     <div class="three">
-                        <img src="./images/icons8-cash-withdrawal-32.png" alt="withdraw" class="image">
-                        <div class="withdraw">Withdraw</div>
+                        <button class="btn btn-deposit show-modal-withdraw"> <img src="./images/icons8-cash-withdrawal-32.png" alt="withdraw"> <div class="btn-withdraw-label">Withdraw</div></button>
+                        <!-- <div class="withdraw">Withdraw</div> -->
                     </div>
                     <div class="four">
-                        <img src="./images/icons8-money-transfer-32.png" alt="sendmoney" class="image">
-                        <div class="send-money">Send Money</div>
+                        <button class="btn btn-deposit show-modal-withdraw"> <img src="./images/icons8-money-transfer-32.png" alt="sendmoney"> <div class="btn-sendmoney-label">Send Money</div></button>
+                        <!-- <div class="send-money">Send Money</div> -->
                     </div>
                     <div class="five">
                         <img src="./images/icons8-more-info-32.png" alt="moreinfo" class="image">
@@ -51,10 +51,10 @@
                     </div>
                     <div class="six">
                         <div class="header">Expenses</div>
-                        <button type="button" class="add-expense-btn">Add Expense</button>
+                        <button class="add-expense-btn">Add Expense</button>
                         <div class="add-board">
                             <table class="styled-table-expense">
-                                <thead>
+                                <!-- <thead>
                                     <th>Expenses</th>
                                     <th>Cost</th>
                                     <th>Actions</th>
@@ -73,18 +73,34 @@
                                     <td data-label="Expenses">Pc</td>
                                     <td data-label="Cost">$100.00</td>
                                     <td data-label="Icon"><i class="fas fa-trash-alt"></i><span><i class="fas fa-pencil-alt"></i></span></td>
-                                </tbody>
+                                </tbody> -->
                             </table>
                         </div>
                     </div>
         
                 </div>
             </div>
+
+            <!-- the modal itself -->
+            <div class="modal-deposit hidden">
+                   
+               <button class="close-modal-deposit">&times;</button>
+    
+               <h1 id="DepositLabel">Deposit</h1><br>
+               <form action="">
+                   <div id="right">
+                   <input type="text" id="amount-deposit" class="client-info">
+                   <label for="amount-deposit">Deposit Amount</label>
+                   <input type="Submit" id="submit-deposit" class="client-info" value="Submit">
+                   </div>
+               </form>
+           </div>
+           <div class="overlay-deposit hidden"></div>
+           <!--End of deposit Modal-->
         </header>
-        
     </div>
     <!-- end of first -->
 
-    <script defer type="module" src = "./js/utilScript.js"></script>
+    <script defer type="module" src ="./js/mainUtilScript.js"></script>
 </body>
 </html>

@@ -41,3 +41,4 @@ const toggleModalLogin = function () {
 btnOpenModalLogin.addEventListener("click", toggleModalLogin);
 btnCloseModalLogin.addEventListener("click", toggleModalLogin);
 overlayLogin.addEventListener("click", toggleModalLogin);
+

@@ -10,8 +10,8 @@ export const navCollapseDiv = document.querySelector('.navbar-collapse');
 
 //pages
 export const firstPage = document.querySelector('.first');
-export const secondPage = document.querySelector('.second');
-export const thirdPage = document.querySelector('.third');
+// export const secondPage = document.querySelector('.second');
+// export const thirdPage = document.querySelector('.third');
 
 // register modal
 export const modalRegister = document.querySelector(".modal-register"); //selects the modal
@@ -24,3 +24,9 @@ export const modalLogin = document.querySelector(".modal-login"); //selects the 
 export const btnCloseModalLogin = document.querySelector(".close-modal-login"); //selects the button to close the modal
 export const btnOpenModalLogin = document.querySelector(".show-modal-login"); //selects the button to show the modal
 export const overlayLogin = document.querySelector(".overlay-login"); //selects the overlay
+
+//deposit modal
+export const modalDeposit = document.querySelector(".modal-deposit"); //selects the modal
+export const btnCloseModalDeposit = document.querySelector(".close-modal-deposit"); //selects the button to close the modal
+export const btnOpenModalDeposit = document.querySelector(".show-modal-deposit"); //selects the button to show the modal
+export const overlayDeposit = document.querySelector(".overlay-deposit"); //selects the overlay
