@@ -10,7 +10,7 @@ export const navCollapseDiv = document.querySelector('.navbar-collapse');
 
 //pages
 export const firstPage = document.querySelector('.first');
-// export const secondPage = document.querySelector('.second');
+export const secondPage = document.querySelector('.second');
 // export const thirdPage = document.querySelector('.third');
 
 // register modal
@@ -30,3 +30,15 @@ export const modalDeposit = document.querySelector(".modal-deposit"); //selects 
 export const btnCloseModalDeposit = document.querySelector(".close-modal-deposit"); //selects the button to close the modal
 export const btnOpenModalDeposit = document.querySelector(".show-modal-deposit"); //selects the button to show the modal
 export const overlayDeposit = document.querySelector(".overlay-deposit"); //selects the overlay
+
+//withdraw modal
+export const modalWithdraw = document.querySelector(".modal-withdraw"); //selects the modal
+export const btnCloseModalWithdraw = document.querySelector(".close-modal-withdraw"); //selects the button to close the modal
+export const btnOpenModalWithdraw = document.querySelector(".show-modal-withdraw"); //selects the button to show the modal
+export const overlayWithdraw = document.querySelector(".overlay-withdraw"); //selects the overlay
+
+//sendmoney modal
+export const modalSendmoney = document.querySelector(".modal-sendmoney"); //selects the modal
+export const btnCloseModalSendmoney = document.querySelector(".close-modal-sendmoney"); //selects the button to close the modal
+export const btnOpenModalSendmoney = document.querySelector(".show-modal-sendmoney"); //selects the button to show the modal
+export const overlaySendmoney = document.querySelector(".overlay-sendmoney"); //selects the overlay

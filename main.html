@@ -38,11 +38,11 @@
                         <!-- <div class="deposit">Deposit</div> -->
                     </div>
                     <div class="three">
-                        <button class="btn btn-deposit show-modal-withdraw"> <img src="./images/icons8-cash-withdrawal-32.png" alt="withdraw"> <div class="btn-withdraw-label">Withdraw</div></button>
+                        <button class="btn btn-withdraw show-modal-withdraw"> <img src="./images/icons8-cash-withdrawal-32.png" alt="withdraw"> <div class="btn-withdraw-label">Withdraw</div></button>
                         <!-- <div class="withdraw">Withdraw</div> -->
                     </div>
                     <div class="four">
-                        <button class="btn btn-deposit show-modal-withdraw"> <img src="./images/icons8-money-transfer-32.png" alt="sendmoney"> <div class="btn-sendmoney-label">Send Money</div></button>
+                        <button class="btn btn-sendmoney show-modal-sendmoney"> <img src="./images/icons8-money-transfer-32.png" alt="sendmoney"> <div class="btn-sendmoney-label">Send Money</div></button>
                         <!-- <div class="send-money">Send Money</div> -->
                     </div>
                     <div class="five">
@@ -97,6 +97,42 @@
            </div>
            <div class="overlay-deposit hidden"></div>
            <!--End of deposit Modal-->
+
+           <!-- the modal itself -->
+           <div class="modal-withdraw hidden">
+                   
+            <button class="close-modal-withdraw">&times;</button>
+ 
+            <h1 id="WithdrawLabel">Withdraw</h1><br>
+            <form action="">
+                <div id="right">
+                <input type="text" id="amount-withdraw" class="client-info">
+                <label for="amount-withdraw">Withdrawal Amount</label>
+                <input type="Submit" id="submit-withdraw" class="client-info" value="Submit">
+                </div>
+            </form>
+        </div>
+        <div class="overlay-withdraw hidden"></div>
+        <!--End of Withdraw Modal-->
+
+        <!-- the modal itself -->
+        <div class="modal-sendmoney hidden">
+                   
+            <button class="close-modal-sendmoney">&times;</button>
+ 
+            <h1 id="SendmoneyLabel">Send Money</h1><br>
+            <form action="">
+                <div id="right">
+                <input type="text" id="recipient-sendmoney" class="client-info">
+                <label for="recipient-sendmoney">Recipient Account Number</label>
+                <input type="text" id="amount-sendmoney" class="client-info">
+                <label for="amount-sendmoney">Send Money Amount</label>
+                <input type="Submit" id="submit-sendmoney" class="client-info" value="Submit">
+                </div>
+            </form>
+        </div>
+        <div class="overlay-sendmoney hidden"></div>
+        <!--End of Withdraw Modal-->
         </header>
     </div>
     <!-- end of first -->
