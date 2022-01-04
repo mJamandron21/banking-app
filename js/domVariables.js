@@ -20,7 +20,6 @@ export const btnOpenModalRegister = document.querySelector(".show-modal-register
 export const overlayRegister = document.querySelector(".overlay-register"); //selects the overlay
 export const registerFirstname = document.querySelector("#firstname");
 export const formRegister = document.querySelector(".formRegister");
-// export const registerMiddlename = document.querySelector("#middlename");
 export const registerLastname = document.querySelector("#lastname");
 export const registerEmail = document.querySelector("#email");
 export const registerUsername = document.querySelector("#username-register");

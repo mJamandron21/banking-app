@@ -3,7 +3,6 @@ export function userRecordsInitialLoad(){
   let user_records=new Array();
   let accountnumber = Math.floor(100000000000 + Math.random() * 900000000000);
   let firstname = "Mark"
-  let middlename = "Villuga"
   let lastname = "Jamandron"
   let username = "admin"
   let password = "admin123"
@@ -15,7 +14,6 @@ export function userRecordsInitialLoad(){
     user_records.push({
         "accountnumber" : accountnumber,
         "firstname" : firstname,
-        "middlename" : middlename,
         "lastname" : lastname,
         "username" : username,
         "password" : password,

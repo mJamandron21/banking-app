@@ -54,7 +54,6 @@ else{
     let accountnumber = Math.floor(100000000000 + Math.random() * 900000000000);
     let balance = 0
     let expenses = []
-    let middlename = " "
     let role = "user"
     
         user_records.push({
@@ -64,7 +63,6 @@ else{
             "username" : registerUsername.value,
             "password" : registerPassword.value,
             "email" : registerEmail.value,
-            "middlename" : middlename,
             "balance" : balance,
             "expenses" : expenses,
             "role": role,
