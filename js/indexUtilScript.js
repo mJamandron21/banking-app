@@ -27,6 +27,8 @@ import {modalSendmoney} from './domVariables.js'
 import {btnOpenModalSendmoney} from './domVariables.js'
 import {btnCloseModalSendmoney} from './domVariables.js'
 import {overlaySendmoney} from './domVariables.js'
+//dom userRecordsInitial load
+import {userRecordsInitialLoad} from './userRecords.js'
 
 navToggleBtn.addEventListener('click', () => {
     navCollapseDiv.classList.toggle('showNavbar');
@@ -82,4 +84,15 @@ btnOpenModalSendmoney.addEventListener("click", toggleModalSendmoney);
 btnCloseModalSendmoney.addEventListener("click", toggleModalSendmoney);
 overlaySendmoney.addEventListener("click", toggleModalSendmoney);
 
-//to second/main page
+
+//domcontentload!
+document.addEventListener('DOMContentLoaded', (event) => {
+
+  if (localStorage.getItem("userRecords") === null) {
+    console.log("localstorage not found")
+    userRecordsInitialLoad();
+  }
+  else{
+    console.log("localstorage loaded!")
+  }
+});
