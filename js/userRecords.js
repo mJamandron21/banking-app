@@ -7,10 +7,11 @@ export function userRecordsInitialLoad(){
   let lastname = "Jamandron"
   let username = "admin"
   let password = "admin123"
-  let contact = " "
+  let contact = "09173589460"
   let balance = 0
   let expenses = []
   let role = "admin"
+  
     userRecords.push({
         "accountnumber" : accountnumber,
         "firstname" : firstname,
@@ -21,7 +22,8 @@ export function userRecordsInitialLoad(){
         "contact" : contact,
         "balance" : balance,
         "expenses" : expenses,
-        "role": role
+        "role": role,
+        
       })
       localStorage.setItem("userRecords",JSON.stringify(userRecords));
 }
