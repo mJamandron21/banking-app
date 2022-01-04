@@ -1,27 +1,78 @@
-const signUp = e =>{
-    formData = JSON.parse(localStorage.getItem('formData')) || [];
-    let exist = formData.length && 
-    JSON.parse(localStorage.getItem('formData')).some(data=> data.Username.toLowerCase() == document.getElementById('username').value.toLowerCase())  //&& data.Account_Number === document.getElementById('accountNumber').value)
-    if(!exist){
-        formData.push({
-            Account_Number: document.getElementById('accountNumber').value,
-            Firstname: document.getElementById('firstname').value,
-            Middlename: document.getElementById('middlename').value,
-            Lastname: document.getElementById('lastname').value,
-            Contact: document.getElementById('contact').value,
-            Email: document.getElementById('email').value,
-            Amount: document.getElementById('amount').value,
-            Username: document.getElementById('username').value,
-            Password: document.getElementById('pword').value  
-        });
-        localStorage.setItem('formData', JSON.stringify(formData));
-        alert("Registered Successfully")
-        document.getElementById('registerform').reset();
-        document.getElementById('firstname').focus();
-    }else{
-        alert("Username already exist!")
-        e.preventDefault();
-    }
-    console.log(localStorage.getItem('formData'));
-    e.preventDefault();
+//importing dom elements
+import {
+    formRegister,
+    registerFirstname,
+    registerLastname,
+    registerEmail,
+    registerUsername,
+    registerPassword,
+    registerConfirmPass,
+    registerSubmit } from "./domVariables.js";
+
+
+export function submitRegisterForm(){
+    registerSubmit.addEventListener("click", function(event){
+    console.log("submit click")
+    registerUser();
+    event.preventDefault()
+    });
 }
+
+
+function registerUser(){
+let user_records=new Array();
+    user_records=JSON.parse(localStorage.getItem("userRecords"))?JSON.parse(localStorage.getItem("userRecords")):[]
+
+if( registerFirstname.value == ""){
+    alert("Please Enter your Firstname!")
+    registerFirstname.focus();
+}else if( registerLastname.value == "" ){
+    alert("Please Enter your Lastname!")
+    registerLastname.focus();
+}else if( registerEmail.value == ""){
+    alert("Please Enter your Email!")
+    registerEmail.focus();
+}else if( registerUsername.value == "" ){
+    alert("Please Enter your Username!")  
+    registerUsername.focus();
+}else if( registerPassword.value == ""){
+    alert("Please Enter your Password!")
+    registerPassword.focus();
+}else if( registerConfirmPass.value == "" ){
+    alert("Please Enter your Comfirm Password!")  
+    registerConfirmPass.focus();
+}else if(user_records.some((value)=>{return value.username==registerUsername.value})){
+    alert("Sorry the username you have entered is already taken!")
+    registerUsername.focus();
+}else if(registerPassword.value != registerConfirmPass.value){
+    alert("Password and Confirm Password didn't match!")
+    registerConfirmPass.focus();
+}
+else{ 
+    // alert("Fill all the fields!")
+    // modalRegister.focus();
+    let accountnumber = Math.floor(100000000000 + Math.random() * 900000000000);
+    let balance = 0
+    let expenses = []
+    let middlename = " "
+    let role = "user"
+    
+        user_records.push({
+            "accountnumber" : accountnumber,
+            "firstname" : registerFirstname.value,
+            "lastname" : registerLastname.value,
+            "username" : registerUsername.value,
+            "password" : registerPassword.value,
+            "email" : registerEmail.value,
+            "middlename" : middlename,
+            "balance" : balance,
+            "expenses" : expenses,
+            "role": role,
+        })
+        localStorage.setItem("userRecords",JSON.stringify(user_records));
+        formRegister.reset();
+}
+
+}//end of registerUser Function!
+
+

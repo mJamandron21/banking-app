@@ -18,6 +18,15 @@ export const modalRegister = document.querySelector(".modal-register"); //select
 export const btnCloseModalRegister = document.querySelector(".close-modal-register"); //selects the button to close the modal
 export const btnOpenModalRegister = document.querySelector(".show-modal-register"); //selects the button to show the modal
 export const overlayRegister = document.querySelector(".overlay-register"); //selects the overlay
+export const registerFirstname = document.querySelector("#firstname");
+export const formRegister = document.querySelector(".formRegister");
+// export const registerMiddlename = document.querySelector("#middlename");
+export const registerLastname = document.querySelector("#lastname");
+export const registerEmail = document.querySelector("#email");
+export const registerUsername = document.querySelector("#username-register");
+export const registerPassword = document.querySelector("#password-register");
+export const registerConfirmPass = document.querySelector("#confirm-password-register");
+export const registerSubmit = document.querySelector("#submit-register");
 
 //login modal
 export const modalLogin = document.querySelector(".modal-login"); //selects the modal

@@ -90,18 +90,22 @@
                 <button class="close-modal-register">&times;</button>
 
                 <h1 id="RegisterLabel">Register</h1><br>
-                <form action="">
+                <form action="" class="formRegister">
                     <div id="right">
-                    <input type="text" id="firstname" class="client-info">
+                    <input type="text" id="firstname" placeholder="e.g Juan" class="client-info" required>
                     <label for="firstname">Firstname</label>
-                    <input type="text" id="lastname" class="client-info">
+                    <!-- <input type="text" id="middlename" placeholder="e.g Reyes" class="client-info" required>
+                    <label for="middlename">Middlename</label> -->
+                    <input type="text" id="lastname" placeholder="e.g Dela Cruz" class="client-info" required>
                     <label for="lastname">Lastname</label>
-                    <input type="text" id="username-register" class="client-info">
+                    <input type="email" id="email" placeholder="e.g. juandelacruz@email.com" class="client-info" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                    <label for="email">Email</label>
+                    <input type="text" id="username-register" placeholder="Username"class="client-info" required>
                     <label for="username-register">Username</label>
-                    <input type="password" id="password-register" class="client-info">
+                    <input type="password" id="password-register" placeholder="Password" class="client-info" required>
                     <label for="password-register">Password</label>
-                    <!-- <input type="password" id="confirm-password-register" class="client-info"> -->
-                    <!-- <label for="confirm-password-register">Confirm Password</label> -->
+                    <input type="password" id="confirm-password-register" placeholder="Confirm Password" class="client-info" required>
+                    <label for="confirm-password-register">Confirm Password</label>
                     <input type="submit" id="submit-register" class="client-info" value="Submit">
                     </div>
                 </form>
@@ -242,5 +246,6 @@
     <!-- end of second/main -->
 
     <script defer type="module" src = "./js/indexUtilScript.js"></script>
+    <script defer type="module" src = "./js/app.js"></script>
 </body>
 </html>

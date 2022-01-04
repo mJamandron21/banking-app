@@ -369,7 +369,7 @@ button{
 }
 .first{
     overflow-x: hidden;
-    /* display: none; */
+    display: block;
 }
 .second{
     overflow-x: hidden;
@@ -525,14 +525,14 @@ button{
     width: 100%;
     max-width: 800px;
     background-color: white;
-    padding: 4rem;
+    padding: 2.5rem;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
     z-index: 10;
 }
   
 #RegisterLabel {
-    padding-top: 5%;
+    padding-top: 3%;
     text-align: center;
     text-transform: uppercase;
     font-weight: 100;
@@ -554,7 +554,13 @@ label {
 #firstname:focus ~ label[for="firstname"] {
     margin: -76px 70px;
 }
+#middlename:focus ~ label[for="middlename"] {
+    margin: -76px 70px;
+}
 #lastname:focus ~ label[for="lastname"] {
+    margin: -76px 70px;
+}
+#email:focus ~ label[for="email"] {
     margin: -76px 70px;
 }
 #username-register:focus ~ label[for="username-register"] {
