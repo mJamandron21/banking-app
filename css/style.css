@@ -878,7 +878,7 @@ label {
 }
 
 .six .header{
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     text-align: center;
     padding-top: 15px;
@@ -892,7 +892,7 @@ label {
     margin-top: 50px;
 }
 .six .add-expense-btn{
-    padding: 10px 30px;
+    padding: 10px 20px;
     cursor: pointer;
     color: white;
     background: var(--primary-light-color);
@@ -941,6 +941,14 @@ label {
 
 .styled-table-expense tbody tr:last-of-type {
     border-bottom: 1px solid white;
+}
+
+.seven .header{
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 /*modal deposit*/
