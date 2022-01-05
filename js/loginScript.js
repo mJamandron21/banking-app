@@ -21,12 +21,10 @@ if(current_user != '')
 {
     alert('Other user is currently login! Please logout first!');
     location.replace("./index.html");
-    break
+    
 }
 else{
-    continue
-}
-
+   
 let user_records=new Array();
 user_records=JSON.parse(localStorage.getItem("userRecords"))?JSON.parse(localStorage.getItem("userRecords")):[]
 
@@ -44,6 +42,8 @@ if(user_records.some((v)=>{return v.username==loginUsername.value && v.password=
 
 }else{
     alert('Login Fail');
+}
+
 }
 
 }//end of loginUser function

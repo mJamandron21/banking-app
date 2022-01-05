@@ -4,8 +4,11 @@ export const navCollapseDiv = document.querySelector('.navbar-collapse');
 
 //pages
 export const firstPage = document.querySelector('.first');
-export const secondPage = document.querySelector('.second');
+// export const secondPage = document.querySelector('.second');
 // export const thirdPage = document.querySelector('.third');
+
+//logout button
+export const logoutButton = document.querySelector(".btn-logout");
 
 // register modal
 export const modalRegister = document.querySelector(".modal-register"); //selects the modal
