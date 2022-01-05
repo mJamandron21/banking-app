@@ -71,13 +71,13 @@
                 <button class="close-modal-login">&times;</button>
 
                 <h1 id="LoginLabel">Login</h1><br>
-                <form action="">
+                <form action="" class="formLogin">
                     <div id="right">
                     <input type="text" id="username-login" class="client-info">
                     <label for="username-login">Username</label>
-                    <input type="password-login" id="password" class="client-info">
+                    <input type="password" id="password-login" class="client-info">
                     <label for="password-login">Password</label>
-                    <input type="Submit" id="submit-login" class="client-info" value="Submit">
+                    <input type="submit" id="submit-login" class="client-info" value="Submit">
                     </div>
                 </form>
             </div>
@@ -116,134 +116,6 @@
         </header>
     </div>
     <!-- end of first / homepage -->
-
-    <!--start of second/main-->
-    <div class = "second">
-        <header id = "header-second">
-            <div class = "container">
-                <nav class = "navbar">
-                    <div class = "brand-and-toggler">
-                        <a href = "#" class = "navbar-brand" style="cursor: none;">User's Dashboard</a>
-                    </div>
-                    <div class = "header-btns">
-                        <!-- <button class = "btn btn-AddUser show-modal">Add User</button> -->
-                        <button class = "btn btn-logout">Log Out</button>
-                    </div>
-                </nav>
-                <!--Main Grid-->
-                <div class="grid">
-                    <div class="one">
-                        <div class="balance">$1000.00</div>
-                        <div class="account-name">Juan Dela Cruz</div>
-                        <div class="footer">
-                            <div class="account-number">6353 7863 5274 9817</div>
-                            <div class="visa">Visa</div>
-                        </div>
-                    </div>
-                    <div class="two">
-                        <button class="btn btn-deposit show-modal-deposit"><img src="./images/icons8-deposit-32.png" alt="deposit"> <div class="btn-deposit-label">Deposit</div></button>
-                        <!-- <img src="./images/icons8-deposit-32.png" alt="deposit" class="image-deposit"> -->
-                        <!-- <div class="deposit">Deposit</div> -->
-                    </div>
-                    <div class="three">
-                        <button class="btn btn-withdraw show-modal-withdraw"> <img src="./images/icons8-cash-withdrawal-32.png" alt="withdraw"> <div class="btn-withdraw-label">Withdraw</div></button>
-                        <!-- <div class="withdraw">Withdraw</div> -->
-                    </div>
-                    <div class="four">
-                        <button class="btn btn-sendmoney show-modal-sendmoney"> <img src="./images/icons8-money-transfer-32.png" alt="sendmoney"> <div class="btn-sendmoney-label">Send Money</div></button>
-                        <!-- <div class="send-money">Send Money</div> -->
-                    </div>
-                    <div class="five">
-                        <button class="btn btn-profile show-modal-profile"> <img src="./images/icons8-more-info-32.png" alt="moreinfo"> <div class="btn-profile-label">Profile</div></button>
-                        <!-- <div class="profile">Profile</div> -->
-                    </div>
-                    <div class="six">
-                        <div class="header">Expenses</div>
-                        <button class="add-expense-btn">Add Expense</button>
-                        <div class="add-board">
-                            <table class="styled-table-expense">
-                                <!-- <thead>
-                                    <th>Expenses</th>
-                                    <th>Cost</th>
-                                    <th>Actions</th>
-                                </thead>
-                                <tbody>
-                                    <td data-label="Expenses">Pc</td>
-                                    <td data-label="Cost">$100.00</td>
-                                    <td data-label="Icon"><i class="fas fa-trash-alt"></i><span><i class="fas fa-pencil-alt"></i></span></td>
-                                </tbody>
-                                <tbody>
-                                    <td data-label="Expenses">Pc</td>
-                                    <td data-label="Cost">$100.00</td>
-                                    <td data-label="Icon"><i class="fas fa-trash-alt"></i><span><i class="fas fa-pencil-alt"></i></span></td>
-                                </tbody>
-                                <tbody>
-                                    <td data-label="Expenses">Pc</td>
-                                    <td data-label="Cost">$100.00</td>
-                                    <td data-label="Icon"><i class="fas fa-trash-alt"></i><span><i class="fas fa-pencil-alt"></i></span></td>
-                                </tbody> -->
-                            </table>
-                        </div>
-                    </div>
-        
-                </div>
-            </div>
-
-            <!-- the modal itself -->
-            <div class="modal-deposit hidden">
-                   
-               <button class="close-modal-deposit">&times;</button>
-    
-               <h1 id="DepositLabel">Deposit</h1><br>
-               <form action="">
-                   <div id="right">
-                   <input type="text" id="amount-deposit" class="client-info">
-                   <label for="amount-deposit">Deposit Amount</label>
-                   <input type="Submit" id="submit-deposit" class="client-info" value="Submit">
-                   </div>
-               </form>
-           </div>
-           <div class="overlay-deposit hidden"></div>
-           <!--End of deposit Modal-->
-
-           <!-- the modal itself -->
-           <div class="modal-withdraw hidden">
-                   
-            <button class="close-modal-withdraw">&times;</button>
- 
-            <h1 id="WithdrawLabel">Withdraw</h1><br>
-            <form action="">
-                <div id="right">
-                <input type="text" id="amount-withdraw" class="client-info">
-                <label for="amount-withdraw">Withdrawal Amount</label>
-                <input type="Submit" id="submit-withdraw" class="client-info" value="Submit">
-                </div>
-            </form>
-        </div>
-        <div class="overlay-withdraw hidden"></div>
-        <!--End of Withdraw Modal-->
-
-        <!-- the modal itself -->
-        <div class="modal-sendmoney hidden">
-                   
-            <button class="close-modal-sendmoney">&times;</button>
- 
-            <h1 id="SendmoneyLabel">Send Money</h1><br>
-            <form action="">
-                <div id="right">
-                <input type="text" id="recipient-sendmoney" class="client-info">
-                <label for="recipient-sendmoney">Recipient Account Number</label>
-                <input type="text" id="amount-sendmoney" class="client-info">
-                <label for="amount-sendmoney">Send Money Amount</label>
-                <input type="Submit" id="submit-sendmoney" class="client-info" value="Submit">
-                </div>
-            </form>
-        </div>
-        <div class="overlay-sendmoney hidden"></div>
-        <!--End of Withdraw Modal-->
-        </header>
-    </div>
-    <!-- end of second/main -->
 
     <script defer type="module" src = "./js/indexUtilScript.js"></script>
     <script defer type="module" src = "./js/app.js"></script>

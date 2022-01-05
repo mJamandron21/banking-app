@@ -373,7 +373,7 @@ button{
 }
 .second{
     overflow-x: hidden;
-    display: none;
+    /* display: none; */
 }
 
 @media screen and (max-width: 480px){

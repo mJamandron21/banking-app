@@ -32,7 +32,10 @@ export const modalLogin = document.querySelector(".modal-login"); //selects the 
 export const btnCloseModalLogin = document.querySelector(".close-modal-login"); //selects the button to close the modal
 export const btnOpenModalLogin = document.querySelector(".show-modal-login"); //selects the button to show the modal
 export const overlayLogin = document.querySelector(".overlay-login"); //selects the overlay
-
+export const loginUsername = document.querySelector("#username-login");
+export const loginPassword = document.querySelector("#password-login");
+export const loginSubmit = document.querySelector("#submit-login");
+export const formLogin = document.querySelector(".formLogin");
 //deposit modal
 export const modalDeposit = document.querySelector(".modal-deposit"); //selects the modal
 export const btnCloseModalDeposit = document.querySelector(".close-modal-deposit"); //selects the button to close the modal
