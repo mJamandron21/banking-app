@@ -68,6 +68,7 @@ else{
             "role": role,
         })
         localStorage.setItem("userRecords",JSON.stringify(user_records));
+        alert("Registered Successfully!");
         formRegister.reset();
 }
 
