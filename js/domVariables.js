@@ -33,6 +33,12 @@ export const loginUsername = document.querySelector("#username-login");
 export const loginPassword = document.querySelector("#password-login");
 export const loginSubmit = document.querySelector("#submit-login");
 export const formLogin = document.querySelector(".formLogin");
+
+//client elements
+export const clientBalance = document.querySelector(".balance");
+export const clientName = document.querySelector(".account-name");
+export const clientAccountNumber = document.querySelector(".account-number");
+
 //deposit modal
 export const modalDeposit = document.querySelector(".modal-deposit"); //selects the modal
 export const btnCloseModalDeposit = document.querySelector(".close-modal-deposit"); //selects the button to close the modal
