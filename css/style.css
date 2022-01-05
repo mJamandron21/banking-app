@@ -96,7 +96,7 @@ button{
     background-color: var(--secondary-color);
 }
 .btn.btn-logout{
-    background-color: var(--primary-color);
+    background-color: var(--primary-light-color);
 }
 .btn.btn-logout:hover{
     background-color: var(--secondary-color);
@@ -717,8 +717,8 @@ label {
 /*main html*/
 #header-second{
     min-height: 100vh;
-    background: rgb(250,103,109);
-    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
+    background: var(--alice-blue);
+    /* background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
 }
 .grid{
     padding: 5px;
@@ -726,8 +726,8 @@ label {
     grid-template-areas: 
     "one one two three"
     "one one four five"
-    "six six six six"
-    "six six six six";
+    "six six six seven"
+    "six six six seven";
     gap: 10px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: (4, 1fr);
@@ -745,8 +745,8 @@ label {
 .one{
     grid-area: one;
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
-    /* background: rgb(250,103,109);
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%); */
+    background: rgb(250,103,109);
     background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
 }
 
@@ -760,10 +760,10 @@ label {
     color: white;
     font-size: 1.5rem;
     font-weight: lighter;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
-    /* background: rgb(250,103,109);
-    background: linear-gradient(335deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);  */
+    /* background: rgb(2,0,36); */
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%); */
+    background: rgb(250,103,109);
+    background: linear-gradient(335deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);  
 }
 .two .btn-deposit-label{
     color: white;
@@ -779,10 +779,10 @@ label {
     color: white;
     font-size: 1.5rem;
     font-weight: lighter;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
-    /* background: rgb(250,103,109);
-    background: linear-gradient(335deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
+    /* background: rgb(2,0,36); */
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%); */
+    background: rgb(250,103,109);
+    background: linear-gradient(335deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); 
 }
 .three .btn-withdraw-label{
     color: white;
@@ -799,10 +799,10 @@ label {
     color: white;
     font-size: 1.5rem;
     font-weight: lighter;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
-    /* background: rgb(250,103,109);
-    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
+    /* background: rgb(2,0,36); */
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%); */
+    background: rgb(250,103,109);
+    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); 
 }
 .four .btn-sendmoney-label{
     color: white;
@@ -819,10 +819,10 @@ label {
     font-size: 1.5rem;
     font-weight: lighter;
     cursor: pointer;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
-    /* background: rgb(250,103,109);
-    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
+    /* background: rgb(2,0,36); */
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%); */
+    background: rgb(250,103,109);
+    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
 }
 .five .btn-profile-label{
     color: white;
@@ -831,9 +831,18 @@ label {
 .six{
     grid-area:six;
     position: relative;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
-    /* background-color: var(--primary-light-color); */
+    /* background: rgb(2,0,36); */
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%); */
+    background: rgb(250,103,109);
+    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
+}
+.seven{
+    grid-area:seven;
+    position: relative;
+    /* background: rgb(2,0,36); */
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%); */
+    background: rgb(250,103,109);
+    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
 }
 
 
@@ -876,7 +885,7 @@ label {
     padding-bottom: 15px;
 }
 .six .add-board{
-    width: 1100px;
+    width: 800px;
     height: 100px;
     margin:auto;
     overflow-x: hidden;
@@ -904,7 +913,7 @@ label {
     font-size: 0.9em;
     font-family: sans-serif;
     width: 100%;
-    min-width: 400px;
+    /* min-width: 400px; */
     overflow: hidden;
     padding-top: 0;
     
