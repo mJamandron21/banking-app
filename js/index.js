@@ -1,4 +1,5 @@
 import { submitRegisterForm } from "./registrationScript.js";
+import { submitLoginForm } from "./loginScript.js";
 //dom userRecordsInitial load
 import {userRecordsInitialLoad} from './userRecords.js'
 
@@ -15,3 +16,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
 submitRegisterForm();
+submitLoginForm();
