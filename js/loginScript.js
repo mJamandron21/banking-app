@@ -30,15 +30,28 @@ user_records=JSON.parse(localStorage.getItem("userRecords"))?JSON.parse(localSto
 
 if(user_records.some((v)=>{return v.username==loginUsername.value && v.password==loginPassword.value && v.role=='user'})){
     alert("Login Successfully!");
-    let current_user = user_records.filter((v)=>{return v.username==loginUsername.value && v.password==loginPassword.value})[0]
-    localStorage.setItem("currentUser",JSON.stringify(current_user));
-    location.replace("./clientDashboard.html");
+    let current_user = JSON.parse(sessionStorage.getItem("currentUser")) || [];
+        current_user.push({
+             CurrentUser: loginUsername.value
+         });
+        localStorage.setItem('currentUser', JSON.stringify(current_user));
+        location.replace("./clientDashboard.html");
+
+    // let current_user = user_records.filter((v)=>{return v.username==loginUsername.value && v.password==loginPassword.value})[0]
+    // localStorage.setItem("currentUser",JSON.stringify(current_user));
 
 }else if(user_records.some((v)=>{return v.username==loginUsername.value && v.password==loginPassword.value && v.role=='admin'})){
     alert("Login Successfully!");
-    let current_user = user_records.filter((v)=>{return v.username==loginUsername.value && v.password==loginPassword.value})[0]
-    localStorage.setItem("currentUser",JSON.stringify(current_user));
-    location.replace("./adminDashboard.html");
+
+    let current_user = JSON.parse(sessionStorage.getItem("currentUser")) || [];
+        current_user.push({
+            CurrentUser: loginUsername.value
+        });
+        localStorage.setItem('currentUser', JSON.stringify(current_user));
+        location.replace("./adminDashboard.html");
+
+    // let current_user = user_records.filter((v)=>{return v.username==loginUsername.value && v.password==loginPassword.value})[0]
+    // localStorage.setItem("currentUser",JSON.stringify(current_user));
 
 }else{
     alert('Login Fail');
