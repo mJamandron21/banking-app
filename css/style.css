@@ -720,6 +720,11 @@ label {
     background: var(--alice-blue);
     /* background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
 }
+
+.currentUsernameHeader{
+    display: none;
+}
+
 .grid{
     padding: 5px;
     display: grid;
