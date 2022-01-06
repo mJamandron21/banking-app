@@ -28,8 +28,8 @@ export function displayClientDetails(){
     let userRecordsArray = new Array();
     userRecordsArray = JSON.parse(getUserRecords);
     let objIndex = userRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
-    clientAccountNumber.innerHTML = userRecordsArray[objIndex].accountnumber
-    clientBalance.innerHTML = userRecordsArray[objIndex].balance
+    clientBalance.innerHTML = '₱' + userRecordsArray[objIndex].balance
     clientName.innerHTML = `${userRecordsArray[objIndex].firstname} ${userRecordsArray[objIndex].lastname}`
+    clientAccountNumber.innerHTML = userRecordsArray[objIndex].accountnumber
     
 }
