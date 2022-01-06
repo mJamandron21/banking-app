@@ -1,7 +1,7 @@
 //Initial records on document load
 export function userRecordsInitialLoad(){
   let user_records=new Array();
-  let accountnumber = Math.floor(100000000000 + Math.random() * 900000000000);
+  let accountnumber = Math.floor(1000000000000000 + Math.random() * 9000000000000000);
   let firstname = "Mark"
   let lastname = "Jamandron"
   let username = "admin"
