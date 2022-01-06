@@ -79,7 +79,7 @@ button{
     color: #fff;
     padding: 12px 20px;
     font-size: 1rem;
-    border-radius: 4px;
+    border-radius: 50px;
     border: 1px solid transparent;
     transition: all 0.3s ease-in-out;
 }
@@ -95,7 +95,7 @@ button{
     background-color: var(--primary-color);
 }
 .btn.btn-start:hover{
-    background-color: var(--primary-light-color);
+    background-color: var(--secondary-color);
 }
 .btn.btn-logout{
     background-color: var(--primary-color);
@@ -108,7 +108,7 @@ button{
     background-color: var(--primary-color);
 }
 .btn.btn-register:hover{
-    background-color: var(--primary-light-color);
+    background-color: var(--secondary-color);
 }
 .btn.btn-deposit{
     background-color:transparent;
@@ -408,31 +408,34 @@ button{
     font-size: 0.9em;
     font-family: sans-serif;
     width: 100%;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    /* min-width: 400px; */
+    overflow: hidden;
+    padding-top: 0;
 }
 
 .styled-table thead tr {
-    background-color: var(--primary-light-color);
+    background-color: var(--primary-color);
     color: #ffffff;
-    text-align: left;
-}
 
+}
 .styled-table th,
 .styled-table td {
+
     padding: 12px 15px;
+    text-align: center;
+    color: white;
 }
 
 .styled-table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
+/* .styled-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
-}
+} */
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #5654b3;
+    border-bottom: 1px solid white;
 }
 
 /*modal register*/
@@ -851,14 +854,14 @@ label {
 }
 
 .styled-table-expense thead tr {
-    background-color: var(--primary-color);
+    background-color: var(--primary-light-color);
     color: #ffffff;
 }
 
 .styled-table-expense th,
 .styled-table-expense td {
     padding: 12px 15px;
-    text-align: left;
+    text-align: center;
     color: white;
 }
 
