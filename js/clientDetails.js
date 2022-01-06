@@ -104,7 +104,7 @@ export function withdrawal(){
         alert("Letter is not allowed!");
         amountWithdraw.focus();
         event.preventDefault();
-    }else if(amountDeposit.value.length != 0 || amountWithdraw.value % 1 != 0){
+    }else if((amountWithdraw.value.length != 0  && amountWithdraw.value % 1 != 0) ||(amountWithdraw.value.length != 0  && amountWithdraw.value % 1 == 0)){
         var totalAmount = Number.parseFloat(currentBalance) - Number.parseFloat(amountWithdraw.value);
         userRecordsArray[objIndex].balance = totalAmount;
         localStorage.setItem("userRecords", JSON.stringify(userRecordsArray));
@@ -114,6 +114,8 @@ export function withdrawal(){
             
     }else{
         alert("Withdrawal Transaction Failed!")
+        amountWithdraw.focus();
+        event.preventDefault();
     }
 
     });
