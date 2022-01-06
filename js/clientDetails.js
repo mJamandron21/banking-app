@@ -5,7 +5,10 @@ import {
     currentUsernameHeader,
     amountDeposit,
     depositSubmit,
-    formDeposit
+    formDeposit, 
+    amountWithdraw,
+    withdrawSubmit,
+    formWithdraw
 } from "./domVariables.js";
 
 
@@ -57,18 +60,16 @@ export function deposit(){
         console.log(userRecordsArray);
     
         let objIndex = userRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
-        // console.log("Before: ", userRecordsArray[objIndex]);
     
         var currentBalance = userRecordsArray[objIndex].balance;
         var totalAmount = Number.parseFloat(amountDeposit.value) + currentBalance;
     
         userRecordsArray[objIndex].balance = totalAmount;
-        // console.log("After: ", userRecordsArray[objIndex]);
     
         clientBalance.innerHTML = userRecordsArray[objIndex].balance; 
         localStorage.setItem("userRecords", JSON.stringify(userRecordsArray));
         
-        alert("Deposit Successful")
+        alert("Deposit Transaction Successful")
         formDeposit.reset();
     }else{
         
@@ -77,4 +78,44 @@ export function deposit(){
     }  
 
     });
+}
+
+export function withdrawal(){
+    withdrawSubmit.addEventListener("click", function(event){
+        console.log("withdraw submit click")
+        
+        let getUserRecords = localStorage.getItem("userRecords");  
+        let userRecordsArray = new Array(); 
+        userRecordsArray = JSON.parse(getUserRecords); 
+        console.log(userRecordsArray);
+    
+        let objIndex = userRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
+        var currentBalance = userRecordsArray[objIndex].balance;
+        
+    if (Number.parseFloat(currentBalance) < Number.parseFloat(amountWithdraw.value)){
+        alert("You don't have enough balance!")
+        amountWithdraw.focus();
+        event.preventDefault();
+    }else if(amountWithdraw.value < 0){
+        alert("Negative amount is not allowed!")
+        amountWithdraw.focus();
+        event.preventDefault();
+    }else if(isNaN(amountWithdraw.value)){
+        alert("Letter is not allowed!");
+        amountWithdraw.focus();
+        event.preventDefault();
+    }else if(amountDeposit.value.length != 0 || amountWithdraw.value % 1 != 0){
+        var totalAmount = Number.parseFloat(currentBalance) - Number.parseFloat(amountWithdraw.value);
+        userRecordsArray[objIndex].balance = totalAmount;
+        localStorage.setItem("userRecords", JSON.stringify(userRecordsArray));
+
+        alert("Withrawal Transaction Successful!")
+        formWithdraw.reset();
+            
+    }else{
+        alert("Withdrawal Transaction Failed!")
+    }
+
+    });
+
 }

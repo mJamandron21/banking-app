@@ -55,6 +55,10 @@ export const modalWithdraw = document.querySelector(".modal-withdraw"); //select
 export const btnCloseModalWithdraw = document.querySelector(".close-modal-withdraw"); //selects the button to close the modal
 export const btnOpenModalWithdraw = document.querySelector(".show-modal-withdraw"); //selects the button to show the modal
 export const overlayWithdraw = document.querySelector(".overlay-withdraw"); //selects the overlay
+export const formWithdraw = document.querySelector(".formWithdrawal");
+export const amountWithdraw = document.querySelector("#amount-withdraw");
+export const withdrawSubmit = document.querySelector("#submit-withdraw");
+
 
 //sendmoney modal
 export const modalSendmoney = document.querySelector(".modal-sendmoney"); //selects the modal
