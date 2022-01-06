@@ -51,7 +51,7 @@ if( registerFirstname.value == ""){
 else{ 
     // alert("Fill all the fields!")
     // modalRegister.focus();
-    let accountnumber = Math.floor(100000000000 + Math.random() * 900000000000);
+    let accountnumber = Math.floor(1000000000000000 + Math.random() * 9000000000000000);
     let balance = 0
     let expenses = []
     let role = "user"
