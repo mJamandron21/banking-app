@@ -797,6 +797,7 @@ label {
     padding-top: 90px;
     padding-left: 30px;
     color: white;
+    letter-spacing: 2px;
 }
 .one .footer{
     display: flex;
@@ -806,9 +807,11 @@ label {
 }
 .one .footer .account-number{
     padding-left: 30px;
+    letter-spacing: 3px;
 }
 .one .footer .visa{
     padding-right: 30px;
+    font-size: 1.5rem;
 }
 
 .six .header{
