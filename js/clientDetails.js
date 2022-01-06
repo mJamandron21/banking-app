@@ -2,7 +2,10 @@ import {
     clientBalance,
     clientName,
     clientAccountNumber,
-    currentUsernameHeader
+    currentUsernameHeader,
+    amountDeposit,
+    depositSubmit,
+    formDeposit
 } from "./domVariables.js";
 
 
@@ -32,4 +35,46 @@ export function displayClientDetails(){
     clientName.innerHTML = `${userRecordsArray[objIndex].firstname} ${userRecordsArray[objIndex].lastname}`
     clientAccountNumber.innerHTML = userRecordsArray[objIndex].accountnumber
     
+}
+
+export function deposit(){
+    
+    depositSubmit.addEventListener("click", function(event){
+        console.log("deposit submit click")
+    
+    if(amountDeposit.value < 0){
+        alert("Negative amount is not allowed!");
+        amountDeposit.focus();
+        event.preventDefault();
+    }else if(isNaN(amountDeposit.value)){
+        alert("Letters are not allowed!");
+        amountDeposit.focus();
+        event.preventDefault();
+    }else if(amountDeposit.value.length != 0){
+        let getUserRecords = localStorage.getItem("userRecords");  
+        let userRecordsArray = new Array(); 
+        userRecordsArray = JSON.parse(getUserRecords); 
+        console.log(userRecordsArray);
+    
+        let objIndex = userRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
+        // console.log("Before: ", userRecordsArray[objIndex]);
+    
+        var currentBalance = userRecordsArray[objIndex].balance;
+        var totalAmount = Number.parseFloat(amountDeposit.value) + currentBalance;
+    
+        userRecordsArray[objIndex].balance = totalAmount;
+        // console.log("After: ", userRecordsArray[objIndex]);
+    
+        clientBalance.innerHTML = userRecordsArray[objIndex].balance; 
+        localStorage.setItem("userRecords", JSON.stringify(userRecordsArray));
+        
+        alert("Deposit Successful")
+        formDeposit.reset();
+    }else{
+        
+        alert("Deposit Transaction Failed!")
+
+    }  
+
+    });
 }

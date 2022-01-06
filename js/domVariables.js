@@ -46,6 +46,9 @@ export const modalDeposit = document.querySelector(".modal-deposit"); //selects 
 export const btnCloseModalDeposit = document.querySelector(".close-modal-deposit"); //selects the button to close the modal
 export const btnOpenModalDeposit = document.querySelector(".show-modal-deposit"); //selects the button to show the modal
 export const overlayDeposit = document.querySelector(".overlay-deposit"); //selects the overlay
+export const amountDeposit = document.querySelector("#amount-deposit");
+export const depositSubmit = document.querySelector("#submit-deposit");
+export const formDeposit = document.querySelector(".formDeposit");
 
 //withdraw modal
 export const modalWithdraw = document.querySelector(".modal-withdraw"); //selects the modal
