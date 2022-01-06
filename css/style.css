@@ -34,9 +34,9 @@ button{
 
 #header{
     min-height: 100vh;
-    /* background-color: var(--alice-blue); */
-    background: rgb(250,103,109);
-    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
+    background-color: var(--alice-blue);
+    /* background: rgb(250,103,109); */
+    /* background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
 }
 .navbar-toggler{
     display: none;
@@ -181,7 +181,7 @@ button{
     line-height: 1.4;
 }
 .banner-title span{
-    color: var(--alice-blue);
+    color: var(--secondary-color);
 }
 .banner-text{
     font-size: 18px;
@@ -189,7 +189,7 @@ button{
     line-height: 1.6;
     max-width: 390px;
     padding-bottom: 3.5rem;
-    color: var(--alice-blue);
+    color: var(--primary-color);
 }
 .header-form{
     margin-bottom: 120px;
@@ -646,8 +646,8 @@ label {
 /*main html*/
 #header-second{
     min-height: 100vh;
-    /* background: var(--alice-blue); */
-    background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%);
+    background: var(--alice-blue);
+    /* background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
 }
 
 .currentUsernameHeader{
