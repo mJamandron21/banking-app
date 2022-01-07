@@ -8,9 +8,17 @@ import {
     formDeposit, 
     amountWithdraw,
     withdrawSubmit,
-    formWithdraw
+    formWithdraw,
+    recipientSendmoney,
+    amountSendmoney,
+    continueSendmoney,
+    formSendmoney,
+    modalSendmoneyConfirm,
+    overlaySendmoneyConfirm,
+    modalSendmoney,
+    overlaySendmoney
 } from "./domVariables.js";
-
+import { toggleModalSendmoneyConfirm } from "./clientUtilScript.js";
 
 export function ifCurrentUserNotExist(){
     let current_user = new Array();
@@ -120,4 +128,39 @@ export function withdrawal(){
 
     });
 
+}
+
+export function sendMoney(){
+    continueSendmoney.addEventListener("click",function(event){
+        console.log("continue submit click");
+
+        var data = JSON.parse(localStorage.getItem('userRecords'));
+        let exist = data.length && JSON.parse(localStorage.getItem('userRecords')).some(data=> data.accountnumber == recipientSendmoney.value && data.role == 'user')
+
+        if(recipientSendmoney.value.length == 0 || amountSendmoney.value.length == 0){
+            alert("Fields cannot be blank! Please fill up the fields!")
+            recipientSendmoney.focus();
+            event.preventDefault();
+        }else if(isNaN(recipientSendmoney.value) || isNaN(amountSendmoney.value) ){
+            alert("Recipient Account Number/Send Money Amount cannot be a letter!")
+            recipientSendmoney.focus();
+            event.preventDefault();
+        }else if(amountSendmoney.value <= 0){
+            alert("Send Money Amount cannot be equal/less than zero!")
+            amountSendmoney.focus();
+            event.preventDefault();
+        }else if(!exist){
+            alert("Reciever's Account Number does not exist! Please check your details")
+            event.preventDefault();
+        }else if (Number.parseFloat(clientBalance.value) < Number.parseFloat(amountSendmoney.value)){
+            alert("Sorry you do not have enough balance to continue this transaction! Please check your Account Balance first")
+            event.preventDefault();
+        }else{
+            
+            toggleModalSendmoneyConfirm();
+            event.preventDefault();
+           
+        }
+
+    })
 }

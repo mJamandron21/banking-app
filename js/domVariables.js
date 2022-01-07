@@ -65,3 +65,20 @@ export const modalSendmoney = document.querySelector(".modal-sendmoney"); //sele
 export const btnCloseModalSendmoney = document.querySelector(".close-modal-sendmoney"); //selects the button to close the modal
 export const btnOpenModalSendmoney = document.querySelector(".show-modal-sendmoney"); //selects the button to show the modal
 export const overlaySendmoney = document.querySelector(".overlay-sendmoney"); //selects the overlay
+export const formSendmoney = document.querySelector(".formSendmoney");
+export const recipientSendmoney = document.querySelector("#recipient-sendmoney");
+export const amountSendmoney = document.querySelector("#amount-sendmoney");
+export const continueSendmoney = document.querySelector("#continue-sendmoney");
+
+//sendmoney confirmation modal
+export const modalSendmoneyConfirm = document.querySelector(".modal-sendmoney-confirmation");
+export const btnCloseModalSendmoneyConfirm = document.querySelector(".close-modal-sendmoney-confirmation");
+export const overlaySendmoneyConfirm = document.querySelector(".overlay-sendmoney-confirmation");
+export const formSendmoneyConfirm = document.querySelector(".sendMoneyConfirmation")
+export const confirmSendmoney = document.querySelector("#send-sendmoney");
+export const cancelSendmoney = document.querySelector("#cancel-sendmoney");
+export const recipientName = document.querySelector(".recipient-name");
+export const recipientAccountNumber = document.querySelector(".recipient-account-number");
+export const recipientAmountToSend = document.querySelector(".recipient-amountToSend");
+
+// export const btnOpenModalSendmoneyConfrim = document.querySelector(".show-modal-sendmoney-confirm");

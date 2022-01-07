@@ -1127,13 +1127,13 @@ label {
     margin: -76px 70px;
 }
 
-#submit-sendmoney {
+#continue-sendmoney {
     border: none;
     background-color: var(--primary-light-color);
     color: white;
     width: 60%;
 }
-#submit-sendmoney:hover {
+#continue-sendmoney:hover {
     background-color: var(--secondary-color)
 }
 .overlay-sendmoney {
@@ -1148,6 +1148,113 @@ label {
 }
   
 .close-modal-sendmoney {
+    position: absolute;
+    top: 0.8rem;
+    right: 1.3rem;
+    font-size: 2.5rem;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/*modal sendmoney confirm*/
+#right {
+    margin: auto;
+    width: 95%;
+    height: 100%;
+    border-radius: 10px;
+}
+.modal-sendmoney-confirmation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 4rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+#SendmoneyConfirmationLabel {
+    padding-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+    color: var(--primary-color);
+    text-shadow: var(--box-shadow);
+}
+/* .client-info {
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    height: 50px;
+    border: solid #999 1px;
+    border-radius: 5px;
+    text-indent: 15px;
+    transition: all 200ms;
+    box-shadow: var(--box-shadow);
+} */
+/* .client-info:focus {
+    width: 80%;
+} */
+label {
+    position: absolute;
+    margin: -76px 130px;
+      font-size: 12px;
+      white-space: nowrap;
+      background: #fff;
+      padding: 0 5px;
+      color: #999;
+    transition: all 200ms;
+    text-shadow: var(--box-shadow);
+}
+/* #recipient-sendmoney:focus ~ label[for="recipient-sendmoney"] {
+    margin: -76px 70px;
+}
+#amount-sendmoney:focus ~ label[for="amount-sendmoney"] {
+    margin: -76px 70px;
+} */
+
+#right p{
+    text-align: center;
+}
+#right h3{
+    text-align: center;
+}
+#send-sendmoney {
+    border: none;
+    background-color: var(--primary-light-color);
+    color: white;
+    width: 60%;
+}
+#send-sendmoney:hover {
+    background-color: var(--secondary-color)
+}
+#cancel-sendmoney {
+    border: none;
+    background-color: red;
+    color: white;
+    width: 60%;
+}
+#cancel-sendmoney:hover {
+    background-color: var(--secondary-color)
+}
+.overlay-sendmoney-confirmation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+}
+  
+.close-modal-sendmoney-confirmation {
     position: absolute;
     top: 0.8rem;
     right: 1.3rem;

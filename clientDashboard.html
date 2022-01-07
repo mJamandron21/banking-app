@@ -47,7 +47,7 @@
                         <!-- <div class="send-money">Send Money</div> -->
                     </div>
                     <div class="five">
-                        <button class="btn btn-profile show-modal-profile"> <img src="./images/icons8-more-info-32.png" alt="moreinfo"> <div class="btn-profile-label">Profile</div></button>
+                        <button class="btn btn-profile show-modal-sendmoney-confirm"> <img src="./images/icons8-more-info-32.png" alt="moreinfo"> <div class="btn-profile-label">Profile</div></button>
                         <!-- <div class="profile">Profile</div> -->
                     </div>
                     <div class="six">
@@ -134,7 +134,7 @@
                 <label for="recipient-sendmoney">Recipient Account Number</label>
                 <input type="text" id="amount-sendmoney" class="client-info">
                 <label for="amount-sendmoney">Send Money Amount</label>
-                <input type="Submit" id="submit-sendmoney" class="client-info" value="Continue">
+                <input type="Submit" id="continue-sendmoney" class="client-info" value="Continue">
                 </div>
             </form>
         </div>
@@ -149,15 +149,18 @@
             <h1 id="SendmoneyComfirmationLabel">Send Money Confirmation</h1><br>
             <form action="" class="sendMoneyConfirmation">
                 <div id="right">
-                <input type="text" id="recipient-sendmoney" class="client-info">
-                <label for="recipient-sendmoney">Recipient Account Number</label>
-                <input type="text" id="amount-sendmoney" class="client-info">
-                <label for="amount-sendmoney">Send Money Amount</label>
-                <input type="Submit" id="submit-sendmoney" class="client-info" value="Submit">
+                <p>You are about to send money to:</p>
+                <h3 class="recipient-name">Ken Jamandron</h3>
+                <p>ACCOUNT NUMBER:</p>
+                <h3 class="recipient-account-number">465120564102</h3>
+                <p>AMOUNT:</p>
+                <h3 class="recipient-amountToSend">500</h3>
+                <input type="Submit" id="send-sendmoney" class="client-info" value="Send">
+                <input type="Submit" id="cancel-sendmoney" class="client-info" value="Cancel">
                 </div>
             </form>
         </div>
-        <div class="overlay-sendmoney hidden"></div>
+        <div class="overlay-sendmoney-confirmation hidden"></div>
         <!--End of Send Money Confirmation Modal-->
         </header>
     </div>

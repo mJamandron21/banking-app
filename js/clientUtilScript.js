@@ -14,27 +14,41 @@ import {btnOpenModalSendmoney} from './domVariables.js'
 import {btnCloseModalSendmoney} from './domVariables.js'
 import {overlaySendmoney} from './domVariables.js'
 
+//modal send money confirm
+import { modalSendmoneyConfirm } from './domVariables.js'
+import { btnCloseModalSendmoneyConfirm } from './domVariables.js'
+// import { btnOpenModalSendmoneyConfrim } from './domVariables.js'
+import { overlaySendmoneyConfirm } from './domVariables.js'
+
 
 const toggleModalDeposit = function () {
   modalDeposit.classList.toggle("hidden");
   overlayDeposit.classList.toggle("hidden");
 };
-btnOpenModalDeposit.addEventListener("click", toggleModalDeposit);
-btnCloseModalDeposit.addEventListener("click", toggleModalDeposit);
-overlayDeposit.addEventListener("click", toggleModalDeposit);
+  btnOpenModalDeposit.addEventListener("click", toggleModalDeposit);
+  btnCloseModalDeposit.addEventListener("click", toggleModalDeposit);
+  overlayDeposit.addEventListener("click", toggleModalDeposit);
 
 const toggleModalWithdraw = function () {
-    modalWithdraw.classList.toggle("hidden");
-    overlayWithdraw.classList.toggle("hidden");
+  modalWithdraw.classList.toggle("hidden");
+  overlayWithdraw.classList.toggle("hidden");
   };
   btnOpenModalWithdraw.addEventListener("click", toggleModalWithdraw);
   btnCloseModalWithdraw.addEventListener("click", toggleModalWithdraw);
   overlayWithdraw.addEventListener("click", toggleModalWithdraw);
 
-  const toggleModalSendmoney = function () {
-    modalSendmoney.classList.toggle("hidden");
-    overlaySendmoney.classList.toggle("hidden");
+const toggleModalSendmoney = function () {
+  modalSendmoney.classList.toggle("hidden");
+  overlaySendmoney.classList.toggle("hidden");
   };
   btnOpenModalSendmoney.addEventListener("click", toggleModalSendmoney);
   btnCloseModalSendmoney.addEventListener("click", toggleModalSendmoney);
   overlaySendmoney.addEventListener("click", toggleModalSendmoney);
+
+export const toggleModalSendmoneyConfirm = function (event) {
+  modalSendmoneyConfirm.classList.toggle("hidden");
+  overlaySendmoneyConfirm.classList.toggle("hidden");
+  };
+  // btnOpenModalSendmoneyConfrim.addEventListener("click", toggleModalSendmoneyConfirm);
+  btnCloseModalSendmoneyConfirm.addEventListener("click", toggleModalSendmoneyConfirm);
+  overlaySendmoneyConfirm.addEventListener("click", toggleModalSendmoneyConfirm);
