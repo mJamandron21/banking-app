@@ -16,7 +16,10 @@ import {
     modalSendmoneyConfirm,
     overlaySendmoneyConfirm,
     modalSendmoney,
-    overlaySendmoney
+    overlaySendmoney,
+    recipientName,
+    recipientAccountNumber,
+    recipientAmountToSend
 } from "./domVariables.js";
 import { toggleModalSendmoneyConfirm } from "./clientUtilScript.js";
 
@@ -174,11 +177,20 @@ export function sendMoney(){
             reciever_data = JSON.parse(localStorage.getItem("recieverData")) || [];
             reciever_data.push({
                 "reciever_name": `${recieverDataArray[objIndex1].firstname} ${recieverDataArray[objIndex1].lastname}`,
-                "reciever_accountnumber": recieverDataArray[objIndex1].accountnumber
+                "reciever_accountnumber": recieverDataArray[objIndex1].accountnumber,
+                "reciver_amounttorecieve": amountSendmoney.value
             });
             localStorage.setItem('recieverData', JSON.stringify(reciever_data));
             toggleModalSendmoneyConfirm();
             event.preventDefault();
+
+            //to show reciever details in the send money confirm modal
+            let recieverRecordsArray = new Array(); 
+            recieverRecordsArray = JSON.parse(localStorage.getItem("recieverData")) || []; 
+        
+            recipientName.innerHTML = recieverRecordsArray[0].reciever_name
+            recipientAccountNumber.innerHTML = recieverRecordsArray[0].reciever_accountnumber
+            recipientAmountToSend.innerHTML = recieverRecordsArray[0].reciver_amounttorecieve
            
         }
 
@@ -186,5 +198,7 @@ export function sendMoney(){
 }
 
 export function sendMoneyConfirmation(){
+
+        
 
 }
