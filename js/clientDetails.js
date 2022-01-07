@@ -133,9 +133,17 @@ export function withdrawal(){
 export function sendMoney(){
     continueSendmoney.addEventListener("click",function(event){
         console.log("continue submit click");
-
+        //to search for the data inside user records
         var data = JSON.parse(localStorage.getItem('userRecords'));
         let exist = data.length && JSON.parse(localStorage.getItem('userRecords')).some(data=> data.accountnumber == recipientSendmoney.value && data.role == 'user')
+
+        //to be use on checkig the current balace of sender
+        let getUserRecords = localStorage.getItem("userRecords");  
+        let userRecordsArray = new Array(); 
+        userRecordsArray = JSON.parse(getUserRecords); 
+        console.log(userRecordsArray);
+        let objIndex = userRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
+        var currentBalance = userRecordsArray[objIndex].balance;
 
         if(recipientSendmoney.value.length == 0 || amountSendmoney.value.length == 0){
             alert("Fields cannot be blank! Please fill up the fields!")
@@ -152,7 +160,7 @@ export function sendMoney(){
         }else if(!exist){
             alert("Reciever's Account Number does not exist! Please check your details")
             event.preventDefault();
-        }else if (Number.parseFloat(clientBalance.value) < Number.parseFloat(amountSendmoney.value)){
+        }else if (Number.parseFloat(currentBalance) < Number.parseFloat(amountSendmoney.value)){
             alert("Sorry you do not have enough balance to continue this transaction! Please check your Account Balance first")
             event.preventDefault();
         }else{
@@ -163,4 +171,8 @@ export function sendMoney(){
         }
 
     })
+}
+
+export function sendMoneyConfirmation(){
+    
 }
