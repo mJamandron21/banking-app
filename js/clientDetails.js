@@ -164,7 +164,19 @@ export function sendMoney(){
             alert("Sorry you do not have enough balance to continue this transaction! Please check your Account Balance first")
             event.preventDefault();
         }else{
+            //to be use on setting reciever data into localstorage
+            let recieverDataArray = new Array();
+            recieverDataArray = JSON.parse(getUserRecords)
+
+            let objIndex1 = recieverDataArray.findIndex((obj => obj.accountnumber == recipientSendmoney.value));
             
+            let reciever_data = new Array()
+            reciever_data = JSON.parse(localStorage.getItem("recieverData")) || [];
+            reciever_data.push({
+                "reciever_name": `${recieverDataArray[objIndex1].firstname} ${recieverDataArray[objIndex1].lastname}`,
+                "reciever_accountnumber": recieverDataArray[objIndex1].accountnumber
+            });
+            localStorage.setItem('recieverData', JSON.stringify(reciever_data));
             toggleModalSendmoneyConfirm();
             event.preventDefault();
            
@@ -174,5 +186,5 @@ export function sendMoney(){
 }
 
 export function sendMoneyConfirmation(){
-    
+
 }
