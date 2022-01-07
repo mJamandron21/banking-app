@@ -98,7 +98,7 @@
                    <div id="right">
                    <input type="text" id="amount-deposit" class="client-info">
                    <label for="amount-deposit">Deposit Amount</label>
-                   <input type="Submit" id="submit-deposit" class="client-info" value="Submit">
+                   <input type="Submit" id="submit-deposit" class="client-info" value="Deposit">
                    </div>
                </form>
            </div>
@@ -115,7 +115,7 @@
                 <div id="right">
                 <input type="text" id="amount-withdraw" class="client-info">
                 <label for="amount-withdraw">Withdrawal Amount</label>
-                <input type="Submit" id="submit-withdraw" class="client-info" value="Submit">
+                <input type="Submit" id="submit-withdraw" class="client-info" value="Withdraw">
                 </div>
             </form>
         </div>
@@ -128,7 +128,26 @@
             <button class="close-modal-sendmoney">&times;</button>
  
             <h1 id="SendmoneyLabel">Send Money</h1><br>
-            <form action="">
+            <form action="" class="formSendmoney">
+                <div id="right">
+                <input type="text" id="recipient-sendmoney" class="client-info">
+                <label for="recipient-sendmoney">Recipient Account Number</label>
+                <input type="text" id="amount-sendmoney" class="client-info">
+                <label for="amount-sendmoney">Send Money Amount</label>
+                <input type="Submit" id="submit-sendmoney" class="client-info" value="Continue">
+                </div>
+            </form>
+        </div>
+        <div class="overlay-sendmoney hidden"></div>
+        <!--End of Send Money Modal-->
+
+        <!-- the modal itself -->
+        <div class="modal-sendmoney-confirmation hidden">
+                   
+            <button class="close-modal-sendmoney-confirmation">&times;</button>
+ 
+            <h1 id="SendmoneyComfirmationLabel">Send Money Confirmation</h1><br>
+            <form action="" class="sendMoneyConfirmation">
                 <div id="right">
                 <input type="text" id="recipient-sendmoney" class="client-info">
                 <label for="recipient-sendmoney">Recipient Account Number</label>
@@ -139,7 +158,7 @@
             </form>
         </div>
         <div class="overlay-sendmoney hidden"></div>
-        <!--End of Withdraw Modal-->
+        <!--End of Send Money Confirmation Modal-->
         </header>
     </div>
     <!-- end of second/main -->
