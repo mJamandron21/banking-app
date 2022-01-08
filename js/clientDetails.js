@@ -19,7 +19,9 @@ import {
     overlaySendmoney,
     recipientName,
     recipientAccountNumber,
-    recipientAmountToSend
+    recipientAmountToSend,
+    confirmSendmoney,
+    cancelSendmoney
 } from "./domVariables.js";
 import { toggleModalSendmoneyConfirm } from "./clientUtilScript.js";
 
@@ -140,7 +142,7 @@ export function sendMoney(){
         var data = JSON.parse(localStorage.getItem('userRecords'));
         let exist = data.length && JSON.parse(localStorage.getItem('userRecords')).some(data=> data.accountnumber == recipientSendmoney.value && data.role == 'user')
 
-        //to be use on checkig the current balace of sender
+        //to be use on checkig the current balance of sender
         let getUserRecords = localStorage.getItem("userRecords");  
         let userRecordsArray = new Array(); 
         userRecordsArray = JSON.parse(getUserRecords); 
@@ -154,6 +156,10 @@ export function sendMoney(){
             event.preventDefault();
         }else if(isNaN(recipientSendmoney.value) || isNaN(amountSendmoney.value) ){
             alert("Recipient Account Number/Send Money Amount cannot be a letter!")
+            recipientSendmoney.focus();
+            event.preventDefault();
+        }else if(recipientSendmoney.value == userRecordsArray[objIndex].accountnumber){
+            alert("Sending money to your own account is not allowed!")
             recipientSendmoney.focus();
             event.preventDefault();
         }else if(amountSendmoney.value <= 0){
@@ -178,7 +184,7 @@ export function sendMoney(){
             reciever_data.push({
                 "reciever_name": `${recieverDataArray[objIndex1].firstname} ${recieverDataArray[objIndex1].lastname}`,
                 "reciever_accountnumber": recieverDataArray[objIndex1].accountnumber,
-                "reciver_amounttorecieve": amountSendmoney.value
+                "reciever_amounttorecieve": amountSendmoney.value
             });
             localStorage.setItem('recieverData', JSON.stringify(reciever_data));
             toggleModalSendmoneyConfirm();
@@ -186,11 +192,11 @@ export function sendMoney(){
 
             //to show reciever details in the send money confirm modal
             let recieverRecordsArray = new Array(); 
-            recieverRecordsArray = JSON.parse(localStorage.getItem("recieverData")) || []; 
+            recieverRecordsArray = JSON.parse(localStorage.getItem("recieverData")); 
         
             recipientName.innerHTML = recieverRecordsArray[0].reciever_name
             recipientAccountNumber.innerHTML = recieverRecordsArray[0].reciever_accountnumber
-            recipientAmountToSend.innerHTML = recieverRecordsArray[0].reciver_amounttorecieve
+            recipientAmountToSend.innerHTML = recieverRecordsArray[0].reciever_amounttorecieve
            
         }
 
@@ -199,6 +205,49 @@ export function sendMoney(){
 
 export function sendMoneyConfirmation(){
 
+    confirmSendmoney.addEventListener("click", function(event){
+        
+        computeNewSenderBalance();
+        computeNewRecieverBalance();
+
+        alert("Send Money Transaction Successful!");
+        localStorage.removeItem("recieverData");
+
+    });
+
+    cancelSendmoney.addEventListener("click", function(event){
+
+        toggleModalSendmoneyConfirm();
+        event.preventDefault();
+        localStorage.removeItem("recieverData");
+
+    });
         
 
+}
+
+function computeNewSenderBalance(){
+     //use to get the records of the sender
+     let senderRecordsArray =  JSON.parse(localStorage.getItem("userRecords")) || [];   
+     console.log(senderRecordsArray);
+     let objIndex = senderRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
+
+    //computation for new sender balance
+     let newSenderBalance = Number.parseFloat(senderRecordsArray[objIndex].balance) - Number.parseFloat(recipientAmountToSend.innerHTML)
+     console.log(newSenderBalance)
+     senderRecordsArray[objIndex].balance = newSenderBalance;
+     localStorage.setItem('userRecords', JSON.stringify(senderRecordsArray))
+
+}
+
+function computeNewRecieverBalance(){
+    //getting the data for the reciver 
+    let recieverRecordsArray = JSON.parse(localStorage.getItem("userRecords")) || [];
+    let objIndex1 = recieverRecordsArray.findIndex((obj1 => obj1.accountnumber == recipientAccountNumber.innerHTML));
+    
+    //to compute for new reciever balance
+    let newRecieverBalance = Number.parseFloat(recieverRecordsArray[objIndex1].balance) + Number.parseFloat(recipientAmountToSend.innerHTML)
+    console.log(newRecieverBalance)
+    recieverRecordsArray[objIndex1].balance = newRecieverBalance;
+    localStorage.setItem('userRecords', JSON.stringify(recieverRecordsArray))
 }

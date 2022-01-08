@@ -72,7 +72,7 @@ export const continueSendmoney = document.querySelector("#continue-sendmoney");
 
 //sendmoney confirmation modal
 export const modalSendmoneyConfirm = document.querySelector(".modal-sendmoney-confirmation");
-export const btnCloseModalSendmoneyConfirm = document.querySelector(".close-modal-sendmoney-confirmation");
+// export const btnCloseModalSendmoneyConfirm = document.querySelector(".close-modal-sendmoney-confirmation");
 export const overlaySendmoneyConfirm = document.querySelector(".overlay-sendmoney-confirmation");
 export const formSendmoneyConfirm = document.querySelector(".sendMoneyConfirmation")
 export const confirmSendmoney = document.querySelector("#send-sendmoney");

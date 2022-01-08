@@ -16,8 +16,6 @@ import {overlaySendmoney} from './domVariables.js'
 
 //modal send money confirm
 import { modalSendmoneyConfirm } from './domVariables.js'
-import { btnCloseModalSendmoneyConfirm } from './domVariables.js'
-// import { btnOpenModalSendmoneyConfrim } from './domVariables.js'
 import { overlaySendmoneyConfirm } from './domVariables.js'
 
 
@@ -49,6 +47,5 @@ export const toggleModalSendmoneyConfirm = function (event) {
   modalSendmoneyConfirm.classList.toggle("hidden");
   overlaySendmoneyConfirm.classList.toggle("hidden");
   };
-  // btnOpenModalSendmoneyConfrim.addEventListener("click", toggleModalSendmoneyConfirm);
-  btnCloseModalSendmoneyConfirm.addEventListener("click", toggleModalSendmoneyConfirm);
+
   overlaySendmoneyConfirm.addEventListener("click", toggleModalSendmoneyConfirm);
