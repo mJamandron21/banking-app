@@ -41,7 +41,7 @@ if( registerFirstname.value == ""){
 }else if( registerConfirmPass.value == "" ){
     alert("Please Enter your Comfirm Password!")  
     registerConfirmPass.focus();
-}else if(user_records.some((v)=>{return v.username==registerUsername.value})){
+}else if(user_records.some((v)=>{return v.username.toLowerCase() == registerUsername.value.toLowerCase()})){
     alert("Sorry the username you have entered is already taken!")
     registerUsername.focus();
 }else if(registerPassword.value != registerConfirmPass.value){
