@@ -5,10 +5,10 @@ display();
 
 function display(){
     if(localStorage.getItem('userRecords')){
-        var output = document.querySelector('tbody');
-        output.innerHTML = "";
-        JSON.parse(localStorage.getItem('userRecords')).forEach((userrecord,index) => {
-            output.innerHTML += `
+        var render = document.querySelector('tbody');
+        render.innerHTML = "";
+        JSON.parse(localStorage.getItem('userRecords')).forEach((userrecord) => {
+            render.innerHTML += `
                     <tr>
                         <td>${userrecord.accountnumber}</td>
                         <td>${userrecord.lastname.toUpperCase()}</td>
