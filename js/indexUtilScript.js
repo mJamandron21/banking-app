@@ -1,7 +1,11 @@
 //buttons
 import {navToggleBtn} from './domVariables.js'
 import {navCollapseDiv} from './domVariables.js'
-
+//modal register
+import {modalRegister} from './domVariables.js'
+import {btnOpenModalRegister} from './domVariables.js'
+import {btnCloseModalRegister} from './domVariables.js'
+import {overlayRegister} from './domVariables.js'
 //modal login
 import {modalLogin} from './domVariables.js'
 import {btnOpenModalLogin} from './domVariables.js'
@@ -23,6 +27,13 @@ window.addEventListener('resize', () => {
     }, 400);
 });
 
+const toggleModalRegister = function () {
+    modalRegister.classList.toggle("hidden");
+    overlayRegister.classList.toggle("hidden");
+  };
+btnOpenModalRegister.addEventListener("click", toggleModalRegister);
+btnCloseModalRegister.addEventListener("click", toggleModalRegister);
+overlayRegister.addEventListener("click", toggleModalRegister);
 
 const toggleModalLogin = function () {
     modalLogin.classList.toggle("hidden");
