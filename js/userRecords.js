@@ -9,6 +9,7 @@ export function userRecordsInitialLoad(){
   let email = "mjamandron@gmail.com"
   let balance = 0
   let expenses = []
+  let history = []
   let role = "admin"
   
     user_records.push({
@@ -20,6 +21,7 @@ export function userRecordsInitialLoad(){
         "email" : email,
         "balance" : balance,
         "expenses" : expenses,
+        "history": history,
         "role": role,
         
       })

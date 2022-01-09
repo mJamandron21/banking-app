@@ -41,6 +41,9 @@ if( registerFirstname.value == ""){
 }else if( registerConfirmPass.value == "" ){
     alert("Please Enter your Comfirm Password!")  
     registerConfirmPass.focus();
+}else if(!isNaN(registerFirstname.value) || !isNaN(registerLastname.value)){
+    alert("Firstname/Lastname cannot be a number!")  
+    registerFirstname.focus();
 }else if(user_records.some((v)=>{return v.username.toLowerCase() == registerUsername.value.toLowerCase()})){
     alert("Sorry the username you have entered is already taken!")
     registerUsername.focus();
@@ -54,6 +57,7 @@ else{
     let accountnumber = Math.floor(1000000000000000 + Math.random() * 9000000000000000);
     let balance = 0
     let expenses = []
+    let history = []
     let role = "user"
     
         user_records.push({
@@ -65,6 +69,7 @@ else{
             "email" : registerEmail.value,
             "balance" : balance,
             "expenses" : expenses,
+            "history" : history,
             "role": role,
         })
         localStorage.setItem("userRecords",JSON.stringify(user_records));
