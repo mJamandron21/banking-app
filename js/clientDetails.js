@@ -229,6 +229,31 @@ export function sendMoneyConfirmation(){
 
 }
 
+export function displayExpenses(){
+    // let getUserRecords = localStorage.getItem("userRecords");  
+    // let userRecordsArray = new Array(); 
+    // userRecordsArray = JSON.parse(getUserRecords); 
+
+    // let objIndex = userRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
+
+    // var render = document.querySelector("tbody");
+    // let expenseRecordsArray = new Array();
+    // expenseRecordsArray = userRecordsArray[objIndex].expenses
+    
+    // expenseRecordsArray.forEach((data,index) => {
+
+    //     render.innerHTML += `
+        
+    //         <td>${data.item}</td>
+    //         <td>${data.cost}</td>
+    //         <td><span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span><span class="icon" onclick="editTask(${index})"><i class="fas fa-pen"></i></span></td>
+    //      `;
+    // });
+
+   
+}
+
+
 export function addExpense(){
     submitAddExpense.addEventListener("click", function(event){
 

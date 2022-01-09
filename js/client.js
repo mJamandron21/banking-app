@@ -1,5 +1,5 @@
 import { logout } from "./logoutScript.js";
-import {addExpense, deposit, displayClientDetails, ifCurrentUserNotExist, sendMoney, sendMoneyConfirmation, withdrawal} from "./clientDetails.js"
+import {addExpense, deposit, displayClientDetails, displayExpenses, ifCurrentUserNotExist, sendMoney, sendMoneyConfirmation, withdrawal} from "./clientDetails.js"
 
 
 //functions call outside
@@ -10,4 +10,5 @@ withdrawal();
 sendMoney();
 sendMoneyConfirmation();
 addExpense();
+displayExpenses();
 displayClientDetails();
