@@ -21,7 +21,10 @@ import {
     recipientAccountNumber,
     recipientAmountToSend,
     confirmSendmoney,
-    cancelSendmoney
+    cancelSendmoney,
+    addExpenseItem,
+    addExpenseCost,
+    submitAddExpense
 } from "./domVariables.js";
 import { toggleModalSendmoneyConfirm } from "./clientUtilScript.js";
 
@@ -223,6 +226,54 @@ export function sendMoneyConfirmation(){
 
     });
         
+
+}
+
+export function addExpense(){
+    submitAddExpense.addEventListener("click", function(event){
+
+        let getUserRecords = localStorage.getItem("userRecords");  
+        let userRecordsArray = new Array(); 
+        userRecordsArray = JSON.parse(getUserRecords); 
+        console.log(userRecordsArray);
+    
+        let objIndex = userRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
+        var currentBalance = userRecordsArray[objIndex].balance;
+
+        if(addExpenseItem.value.length == 0 || addExpenseCost.value.length == 0){
+            alert("Fields cannot be blank! Please fill up the fields!")
+            addExpenseItem.focus();
+            event.preventDefault();
+        }else if(!isNaN(addExpenseItem.value)){
+            alert("Expense Item cannot be a number!")
+            addExpenseItem.focus();
+            event.preventDefault();
+        }else if(isNaN(addExpenseCost.value)){
+            alert("Expense Cost cannot be a letter!")
+            addExpenseCost.focus();
+            event.preventDefault();
+        }else if(addExpenseCost.value <= 0){
+            alert("Expense Cost cannot be equal/less than zero!")
+            addExpenseCost.focus();
+            event.preventDefault();
+        }else{
+            //condition to add expense into localstorage
+            let newExpense = new Array();
+
+            newExpense = {
+                "item" : addExpenseItem.value,
+                "cost" : addExpenseCost.value
+            }
+
+            let newBalance = Number.parseFloat(currentBalance) - Number.parseFloat(addExpenseCost.value);
+
+            userRecordsArray[objIndex].balance = newBalance;
+            userRecordsArray[objIndex].expenses.push(newExpense);
+            localStorage.setItem("userRecords", JSON.stringify(userRecordsArray));
+        }
+
+
+    });
 
 }
 
