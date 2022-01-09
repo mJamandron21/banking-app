@@ -438,21 +438,27 @@ button{
     color: #ffffff;
 
 }
-.styled-table th,
-.styled-table td {
+.styled-table th {
 
     padding: 12px 15px;
     text-align: center;
     color: white;
 }
 
+.styled-table td {
+
+    padding: 12px 15px;
+    text-align: center;
+    color: black;
+}
+
 .styled-table tbody tr {
     border-bottom: 1px solid #dddddd;
 }
 
-/* .styled-table tbody tr:nth-of-type(even) {
+.styled-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
-} */
+}
 
 .styled-table tbody tr:last-of-type {
     border-bottom: 1px solid white;
@@ -837,14 +843,6 @@ label {
     color: white;
     font-size: 1rem;
 }
-
-/*Hover on cards*/
-/* .two:hover, */
-/* .three:hover, */
-/* .four:hover, */
-/* .five:hover{
-    transform: scale(1.1)
-} */
 
 .one .balance{
     font-size: 4rem;
@@ -1245,20 +1243,6 @@ label {
     color: var(--primary-color);
     text-shadow: var(--box-shadow);
 }
-/* .client-info {
-    display: block;
-    margin: 20px auto;
-    width: 60%;
-    height: 50px;
-    border: solid #999 1px;
-    border-radius: 5px;
-    text-indent: 15px;
-    transition: all 200ms;
-    box-shadow: var(--box-shadow);
-} */
-/* .client-info:focus {
-    width: 80%;
-} */
 label {
     position: absolute;
     margin: -76px 130px;
@@ -1270,12 +1254,6 @@ label {
     transition: all 200ms;
     text-shadow: var(--box-shadow);
 }
-/* #recipient-sendmoney:focus ~ label[for="recipient-sendmoney"] {
-    margin: -76px 70px;
-}
-#amount-sendmoney:focus ~ label[for="amount-sendmoney"] {
-    margin: -76px 70px;
-} */
 
 #right p{
     text-align: center;

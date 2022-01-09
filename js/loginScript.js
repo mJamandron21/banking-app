@@ -50,9 +50,6 @@ if(user_records.some((v)=>{return v.username==loginUsername.value && v.password=
         localStorage.setItem('currentUser', JSON.stringify(current_user));
         location.replace("./adminDashboard.html");
 
-    // let current_user = user_records.filter((v)=>{return v.username==loginUsername.value && v.password==loginPassword.value})[0]
-    // localStorage.setItem("currentUser",JSON.stringify(current_user));
-
 }else{
     alert('Login Fail');
 }

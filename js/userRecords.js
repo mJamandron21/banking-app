@@ -11,6 +11,7 @@ export function userRecordsInitialLoad(){
   let expenses = []
   let history = []
   let role = "admin"
+  let status = "Active"
   
     user_records.push({
         "accountnumber" : accountnumber,
@@ -23,6 +24,7 @@ export function userRecordsInitialLoad(){
         "expenses" : expenses,
         "history": history,
         "role": role,
+        "status": status
         
       })
       localStorage.setItem("userRecords",JSON.stringify(user_records));

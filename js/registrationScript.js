@@ -59,6 +59,7 @@ else{
     let expenses = []
     let history = []
     let role = "user"
+    let status = "Active"
     
         user_records.push({
             "accountnumber" : accountnumber,
@@ -71,6 +72,7 @@ else{
             "expenses" : expenses,
             "history" : history,
             "role": role,
+            "status": status
         })
         localStorage.setItem("userRecords",JSON.stringify(user_records));
         alert("Registered Successfully!");
