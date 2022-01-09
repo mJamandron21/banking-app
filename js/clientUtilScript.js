@@ -18,6 +18,13 @@ import {overlaySendmoney} from './domVariables.js'
 import { modalSendmoneyConfirm } from './domVariables.js'
 import { overlaySendmoneyConfirm } from './domVariables.js'
 
+//modal add expense
+import { modalAddExpense } from './domVariables.js'
+import { overlayAddExpense } from './domVariables.js'
+import { btnCloseModalAddExpense } from './domVariables.js'
+import { btnOpenModalAddExpense } from './domVariables.js'
+
+
 
 const toggleModalDeposit = function () {
   modalDeposit.classList.toggle("hidden");
@@ -43,9 +50,16 @@ const toggleModalSendmoney = function () {
   btnCloseModalSendmoney.addEventListener("click", toggleModalSendmoney);
   overlaySendmoney.addEventListener("click", toggleModalSendmoney);
 
+const toggleModalAddExpense = function () {
+  modalAddExpense.classList.toggle("hidden");
+  overlayAddExpense.classList.toggle("hidden");
+    };
+  btnOpenModalAddExpense.addEventListener("click", toggleModalAddExpense);
+  btnCloseModalAddExpense.addEventListener("click", toggleModalAddExpense);
+  overlayAddExpense.addEventListener("click", toggleModalAddExpense);
+
 export const toggleModalSendmoneyConfirm = function (event) {
   modalSendmoneyConfirm.classList.toggle("hidden");
   overlaySendmoneyConfirm.classList.toggle("hidden");
   };
-
   overlaySendmoneyConfirm.addEventListener("click", toggleModalSendmoneyConfirm);

@@ -52,7 +52,7 @@
                     </div>
                     <div class="six">
                         <div class="header">Expenses</div>
-                        <button class="add-expense-btn">Add Expense</button>
+                        <button class="add-expense-btn show-modal-addExpense">Add Expense</button>
                         <div class="add-board">
                             <table class="styled-table-expense">
                                 <thead>
@@ -61,20 +61,11 @@
                                     <th>Actions</th>
                                 </thead>
                                 <tbody>
-                                    <td data-label="Expenses">Pc</td>
+                                    <td data-label="Expenses">Dinner</td>
                                     <td data-label="Cost">$100.00</td>
                                     <td data-label="Icon"><i class="fas fa-trash-alt"></i><span><i class="fas fa-pencil-alt"></i></span></td>
                                 </tbody>
-                                <tbody>
-                                    <td data-label="Expenses">Pc</td>
-                                    <td data-label="Cost">$100.00</td>
-                                    <td data-label="Icon"><i class="fas fa-trash-alt"></i><span><i class="fas fa-pencil-alt"></i></span></td>
-                                </tbody>
-                                <tbody>
-                                    <td data-label="Expenses">Pc</td>
-                                    <td data-label="Cost">$100.00</td>
-                                    <td data-label="Icon"><i class="fas fa-trash-alt"></i><span><i class="fas fa-pencil-alt"></i></span></td>
-                                </tbody>
+                            
                             </table>
                         </div>
                     </div>
@@ -167,6 +158,25 @@
         </div>
         <div class="overlay-sendmoney-confirmation hidden"></div>
         <!--End of Send Money Confirmation Modal-->
+
+        <!-- the modal itself -->
+        <div class="modal-addExpense hidden">
+                   
+            <button class="close-modal-addExpense">&times;</button>
+ 
+            <h1 id="AddExpenseLabel">Add Expense</h1><br>
+            <form action="" class="formAddExpense">
+                <div id="right">
+                <input type="text" id="add-expense-item" class="client-info">
+                <label for="add-expense-item">Expense Item</label>
+                <input type="text" id="add-expense-cost" class="client-info">
+                <label for="add-expense-cost">Expense Cost</label>
+                <input type="Submit" id="submit-add-expense" class="client-info" value="Add Expense">
+                </div>
+            </form>
+        </div>
+        <div class="overlay-addExpense hidden"></div>
+        <!--End of Send Money Modal-->
         </header>
     </div>
     <!-- end of second/main -->

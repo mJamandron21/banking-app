@@ -72,7 +72,6 @@ export const continueSendmoney = document.querySelector("#continue-sendmoney");
 
 //sendmoney confirmation modal
 export const modalSendmoneyConfirm = document.querySelector(".modal-sendmoney-confirmation");
-// export const btnCloseModalSendmoneyConfirm = document.querySelector(".close-modal-sendmoney-confirmation");
 export const overlaySendmoneyConfirm = document.querySelector(".overlay-sendmoney-confirmation");
 export const formSendmoneyConfirm = document.querySelector(".sendMoneyConfirmation")
 export const confirmSendmoney = document.querySelector("#send-sendmoney");
@@ -81,4 +80,12 @@ export const recipientName = document.querySelector(".recipient-name");
 export const recipientAccountNumber = document.querySelector(".recipient-account-number");
 export const recipientAmountToSend = document.querySelector(".recipient-amountToSend");
 
-// export const btnOpenModalSendmoneyConfrim = document.querySelector(".show-modal-sendmoney-confirm");
+//add expense modal
+export const modalAddExpense = document.querySelector(".modal-addExpense");
+export const overlayAddExpense = document.querySelector(".overlay-addExpense");
+export const btnOpenModalAddExpense = document.querySelector(".show-modal-addExpense");
+export const btnCloseModalAddExpense = document.querySelector(".close-modal-addExpense");
+export const formAddExpense = document.querySelector(".formAddExpense");
+export const addExpenseItem = document.querySelector("#add-expense-item");
+export const addExpenseCost = document.querySelector("#add-expense-cost");
+export const submitAddExpense = document.querySelector("#submit-add-expense");
