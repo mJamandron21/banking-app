@@ -929,7 +929,7 @@ label {
 }
 
 .styled-table-expense tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: var(--primary-color);
 }
 
 .styled-table-expense tbody tr:last-of-type {

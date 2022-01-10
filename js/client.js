@@ -10,5 +10,5 @@ withdrawal();
 sendMoney();
 sendMoneyConfirmation();
 addExpense();
-displayExpenses();
 displayClientDetails();
+displayExpenses();

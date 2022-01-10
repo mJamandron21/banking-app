@@ -230,25 +230,28 @@ export function sendMoneyConfirmation(){
 }
 
 export function displayExpenses(){
-    // let getUserRecords = localStorage.getItem("userRecords");  
-    // let userRecordsArray = new Array(); 
-    // userRecordsArray = JSON.parse(getUserRecords); 
+    let getUserRecords = localStorage.getItem("userRecords");  
+    let userRecordsArray = new Array(); 
+    userRecordsArray = JSON.parse(getUserRecords); 
 
-    // let objIndex = userRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
+    console.log(userRecordsArray)
 
-    // var render = document.querySelector("tbody");
-    // let expenseRecordsArray = new Array();
-    // expenseRecordsArray = userRecordsArray[objIndex].expenses
+    let objIndex = userRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
+    console.log(userRecordsArray[objIndex].expenses)
+
+    var render = document.querySelector("tbody");
+    let expenseRecordsArray = new Array();
+    expenseRecordsArray = Array.from(userRecordsArray[objIndex].expenses)
     
-    // expenseRecordsArray.forEach((data,index) => {
+    expenseRecordsArray.forEach((data,index) => {
 
-    //     render.innerHTML += `
+        render.innerHTML += `
         
-    //         <td>${data.item}</td>
-    //         <td>${data.cost}</td>
-    //         <td><span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span><span class="icon" onclick="editTask(${index})"><i class="fas fa-pen"></i></span></td>
-    //      `;
-    // });
+            <td>${data.item}</td>
+            <td>${data.cost}</td>
+            <td><span class="icon" onclick="deleteExpense(${index})"><i class="fas fa-trash"></i></span><span class="icon" onclick="editExpense(${index})"><i class="fas fa-pen"></i></span></td>
+         `;
+    });
 
    
 }
