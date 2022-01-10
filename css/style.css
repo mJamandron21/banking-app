@@ -710,7 +710,7 @@ label {
     background-size: cover;
     background-repeat: no-repeat; */
     background: rgb(2,0,36); 
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%);
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%); */
     /* background: rgb(250,103,109); */
     /* background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
 }
