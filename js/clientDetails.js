@@ -229,36 +229,13 @@ export function sendMoneyConfirmation(){
 
 }
 
-export function displayExpenses(){
-    let getUserRecords = localStorage.getItem("userRecords");  
-    let userRecordsArray = new Array(); 
-    userRecordsArray = JSON.parse(getUserRecords); 
-
-    console.log(userRecordsArray)
-
-    let objIndex = userRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
-    console.log(userRecordsArray[objIndex].expenses)
-
-    var render = document.querySelector("tbody");
-    let expenseRecordsArray = new Array();
-    expenseRecordsArray = Array.from(userRecordsArray[objIndex].expenses)
-    
-    expenseRecordsArray.forEach((data,index) => {
-
-        render.innerHTML += `
-        
-            <td>${data.item}</td>
-            <td>${data.cost}</td>
-            <td><span class="icon" onclick="deleteExpense(${index})"><i class="fas fa-trash"></i></span><span class="icon" onclick="editExpense(${index})"><i class="fas fa-pen"></i></span></td>
-         `;
-    });
-
-   
-}
-
-
 export function addExpense(){
     submitAddExpense.addEventListener("click", function(event){
+        //setting up the current user form localstorage into the dom elements
+    let getCurrentUser = localStorage.getItem("currentUser")
+    let currentUserArray = new Array();
+    currentUserArray = JSON.parse(getCurrentUser);
+    currentUsernameHeader.innerHTML =  currentUserArray[0].CurrentUser;
 
         let getUserRecords = localStorage.getItem("userRecords");  
         let userRecordsArray = new Array(); 
@@ -306,6 +283,12 @@ export function addExpense(){
 }
 
 function computeNewSenderBalance(){
+    //setting up the current user form localstorage into the dom elements
+    let getCurrentUser = localStorage.getItem("currentUser")
+    let currentUserArray = new Array();
+    currentUserArray = JSON.parse(getCurrentUser);
+    currentUsernameHeader.innerHTML =  currentUserArray[0].CurrentUser;
+
      //use to get the records of the sender
      let senderRecordsArray =  JSON.parse(localStorage.getItem("userRecords")) || [];   
      console.log(senderRecordsArray);

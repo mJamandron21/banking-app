@@ -924,6 +924,9 @@ label {
     color: white;
 }
 
+.icon{
+    margin: 10px;
+}
 .styled-table-expense tbody tr {
     border-bottom: 1px solid #dddddd;
 }
