@@ -27,19 +27,19 @@ currentUsernameHeader.innerHTML =  currentUserArray[0].CurrentUser;
     let expenseRecordsArray = new Array();
     expenseRecordsArray = (userRecordsArray[objIndex].expenses)
     
-    expenseRecordsArray.forEach((data) => {
+    expenseRecordsArray.forEach((data,index) => {
 
         render.innerHTML += `
         
             <td>${data.item}</td>
             <td>${data.cost}</td>
-            <td><button class = "icon" onclick="deleteExpense()"><i class="fas fa-trash"></i></button><span class="icon" onclick="editExpense"><i class="fas fa-pen"></i></span></td>
+            <td><button class = "icon" onclick="deleteExpense(${index})"><i class="fas fa-trash"></i></button><span class="icon" onclick="editExpense"><i class="fas fa-pen"></i></span></td>
          `;
     });
 }
 
 
-function deleteExpense(){
+function deleteExpense(index){
 
     console.log("delete expense click")
 
@@ -72,13 +72,11 @@ function deleteExpense(){
             
                 let objIndex2 = userRecordsArray.findIndex((obj => obj.username ==  currentUsernameHeader.innerHTML));
                 userRecordsArray[objIndex2].balance = newBalance
+                
+                userRecordsArray[objIndex2].expenses.splice(index, 1); //delete or remove the li
                 localStorage.setItem('userRecords', JSON.stringify(userRecordsArray)) 
-
-                // let getLocalStorageData = localStorage.getItem("formData1");
-                // listArray = JSON.parse(getLocalStorageData);
-                // listArray.splice(index, 1); //delete or remove the li
-                // localStorage.setItem("formData1", JSON.stringify(listArray));
-                // window.location.reload()
+               
+                window.location.reload()
 
             };
         }
