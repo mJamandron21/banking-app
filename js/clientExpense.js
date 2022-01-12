@@ -5,7 +5,17 @@ const addExpenseItem = document.querySelector("#add-expense-item");
 const addExpenseCost = document.querySelector("#add-expense-cost");
 const submitAddExpense = document.querySelector("#submit-add-expense");
 
-const itemCostBanner = document.querySelector(".itemCostBanner");
+const itemCostBanner = document.querySelector(".item-cost-banner");
+
+//edit expense modal
+const modalEditExpense = document.querySelector(".modal-editExpense");
+const overlayEditExpense = document.querySelector(".overlay-editExpense");
+const btnCloseModalEditExpense = document.querySelector(".close-modal-editExpense");
+const editItemIndex = document.querySelector("#edit-item-index");
+const editItemCost = document.querySelector("#edit-item-cost");
+const editExpenseItem = document.querySelector("#edit-expense-item");
+const editExpenseCost = document.querySelector("#edit-expense-cost");
+const submitEditExpense = document.querySelector("#submit-edit-expense");
 
 function displayExpenses(){
 //setting up the current user form localstorage into the dom elements
@@ -33,7 +43,7 @@ currentUsernameHeader.innerHTML =  currentUserArray[0].CurrentUser;
         
             <td>${data.item}</td>
             <td>${data.cost}</td>
-            <td><button class = "icon" onclick="deleteExpense(${index})"><i class="fas fa-trash"></i></button><span class="icon" onclick="editExpense"><i class="fas fa-pen"></i></span></td>
+            <td><button class="icon" onclick="editExpense()"><i class="fas fa-pen"></i></button><button class = "icon" onclick="deleteExpense(${index})"><i class="fas fa-trash"></i></button></td>
          `;
     });
 }
@@ -73,7 +83,7 @@ function deleteExpense(index){
                 let objIndex2 = userRecordsArray.findIndex((obj => obj.username ==  currentUsernameHeader.innerHTML));
                 userRecordsArray[objIndex2].balance = newBalance
                 
-                userRecordsArray[objIndex2].expenses.splice(index, 1); //delete or remove the li
+                userRecordsArray[objIndex2].expenses.splice(index, 1); //delete item in table
                 localStorage.setItem('userRecords', JSON.stringify(userRecordsArray)) 
                
                 window.location.reload()
@@ -83,3 +93,28 @@ function deleteExpense(index){
     }
 }
 
+function editExpense(){
+    var table = document.querySelector('.styled-table-expense'),rowIndex;
+    
+        for(var i = 0; i < table.rows.length;i++){
+        table.rows[i].onclick = function(){
+        rowIndex = this.rowIndex;
+        
+        editItemCost.innerHTML = this.cells[1].innerHTML;
+        editExpenseItem.value = this.cells[0].innerHTML;
+        editExpenseCost.value = this.cells[1].innerHTML;
+        };
+    };
+    toggleModalEditExpense();
+    btnCloseModalEditExpense.addEventListener("click", toggleModalEditExpense);
+}
+
+
+
+
+function toggleModalEditExpense() {
+    modalEditExpense.classList.toggle("hidden");
+    overlayEditExpense.classList.toggle("hidden");
+}
+    
+  
