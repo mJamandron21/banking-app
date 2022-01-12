@@ -27,7 +27,7 @@ currentUsernameHeader.innerHTML =  currentUserArray[0].CurrentUser;
     let expenseRecordsArray = new Array();
     expenseRecordsArray = (userRecordsArray[objIndex].expenses)
     
-    expenseRecordsArray.forEach((data,index) => {
+    expenseRecordsArray.forEach((data) => {
 
         render.innerHTML += `
         
@@ -39,7 +39,7 @@ currentUsernameHeader.innerHTML =  currentUserArray[0].CurrentUser;
 }
 
 
-function deleteExpense(index){
+function deleteExpense(){
 
     console.log("delete expense click")
 
@@ -65,15 +65,14 @@ function deleteExpense(index){
                 let itemCost = itemCostBanner.innerHTML
                 
 
-                var newCost = Number.parseFloat(itemCost) + Number.parseFloat(balance)
+                var newBalance = Number.parseFloat(itemCost) + Number.parseFloat(balance)
 
-                console.log(newCost)
+                console.log(newBalance)
             
-                // let getLocalStorageData2 = localStorage.getItem("clientData");   
-                // listArray2 = JSON.parse(getLocalStorageData2); 
-                // objIndex = listArray2.findIndex((obj => obj.Account_Number ==  accountNumber.innerHTML));
-                // listArray2[objIndex].Amount = newCost
-                // localStorage.setItem('clientData', JSON.stringify(listArray2)) 
+            
+                let objIndex2 = userRecordsArray.findIndex((obj => obj.username ==  currentUsernameHeader.innerHTML));
+                userRecordsArray[objIndex2].balance = newBalance
+                localStorage.setItem('userRecords', JSON.stringify(userRecordsArray)) 
 
                 // let getLocalStorageData = localStorage.getItem("formData1");
                 // listArray = JSON.parse(getLocalStorageData);
