@@ -1,8 +1,11 @@
 const currentUsernameHeader = document.querySelector(".currentUsernameHeader")
+// const clientBalance = document.querySelector(".balance");
 
 const addExpenseItem = document.querySelector("#add-expense-item");
 const addExpenseCost = document.querySelector("#add-expense-cost");
 const submitAddExpense = document.querySelector("#submit-add-expense");
+
+const itemCostBanner = document.querySelector(".itemCostBanner");
 
 function displayExpenses(){
 //setting up the current user form localstorage into the dom elements
@@ -46,25 +49,37 @@ function deleteExpense(index){
 
         for(var i = 0; i < table.rows.length;i++){
             table.rows[i].onclick = function(){
-            
-                rowIndex = this.rowIndex;
-                expense.innerHTML  = this.cells[3].innerHTML;
 
-                var newCost = Number.parseFloat(document.getElementById('itemCost2').innerHTML) + parseFloat(accountBalance.innerHTML)
+                rowIndex = this.index;
+                itemCostBanner.innerHTML = this.cells[1].innerHTML;
+
+                //setting up the current user form localstorage into the dom elements
+                let getUserRecords = localStorage.getItem("userRecords")
+                let userRecordsArray = new Array();
+                userRecordsArray = JSON.parse(getUserRecords);
+                
+                let objIndex = userRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
+                console.log(userRecordsArray[objIndex].balance)
+            
+                let balance = userRecordsArray[objIndex].balance
+                let itemCost = itemCostBanner.innerHTML
+                
+
+                var newCost = Number.parseFloat(itemCost) + Number.parseFloat(balance)
 
                 console.log(newCost)
             
-                let getLocalStorageData2 = localStorage.getItem("clientData");   
-                listArray2 = JSON.parse(getLocalStorageData2); 
-                objIndex = listArray2.findIndex((obj => obj.Account_Number ==  accountNumber.innerHTML));
-                listArray2[objIndex].Amount = newCost
-                localStorage.setItem('clientData', JSON.stringify(listArray2)) 
+                // let getLocalStorageData2 = localStorage.getItem("clientData");   
+                // listArray2 = JSON.parse(getLocalStorageData2); 
+                // objIndex = listArray2.findIndex((obj => obj.Account_Number ==  accountNumber.innerHTML));
+                // listArray2[objIndex].Amount = newCost
+                // localStorage.setItem('clientData', JSON.stringify(listArray2)) 
 
-                let getLocalStorageData = localStorage.getItem("formData1");
-                listArray = JSON.parse(getLocalStorageData);
-                listArray.splice(index, 1); //delete or remove the li
-                localStorage.setItem("formData1", JSON.stringify(listArray));
-                window.location.reload()
+                // let getLocalStorageData = localStorage.getItem("formData1");
+                // listArray = JSON.parse(getLocalStorageData);
+                // listArray.splice(index, 1); //delete or remove the li
+                // localStorage.setItem("formData1", JSON.stringify(listArray));
+                // window.location.reload()
 
             };
         }

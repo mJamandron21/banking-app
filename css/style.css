@@ -924,6 +924,9 @@ label {
     color: white;
 }
 
+.itemCostBanner{
+    display: none;
+}
 .icon{
     margin: 10px;
 }
