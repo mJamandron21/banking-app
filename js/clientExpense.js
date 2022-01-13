@@ -75,10 +75,10 @@ function deleteExpense(index){
                 console.log(userRecordsArray[objIndex].balance)
             
                 let balance = userRecordsArray[objIndex].balance
-                let itemCost = itemCostBanner.innerHTML
+                let itemCostBanner = itemCostBanner.innerHTML//hidden field
                 
 
-                var newBalance = Number.parseFloat(itemCost) + Number.parseFloat(balance)
+                var newBalance = Number.parseFloat(itemCostBanner) + Number.parseFloat(balance)
 
                 console.log(newBalance)
             
@@ -105,11 +105,68 @@ function editExpense(){
         table.rows[i].onclick = function(){
         rowIndex = this.rowIndex;
         
-        editItemCost.innerHTML = this.cells[1].innerHTML;
+        editItemCost.innerHTML = this.cells[1].innerHTML;//hidden field
         editExpenseItem.value = this.cells[0].innerHTML;
         editExpenseCost.value = this.cells[1].innerHTML;
-        };
-    };
+        }
+    }
+
+    submitEditExpense.addEventListener("click", function(event){
+        console.log("edit expense click")
+
+        //setting up the current user form localstorage into the dom elements
+        let getUserRecords = localStorage.getItem("userRecords")
+        let userRecordsArray = new Array();
+        userRecordsArray = JSON.parse(getUserRecords);
+        
+        let objIndex = userRecordsArray.findIndex((obj => obj.username == currentUsernameHeader.innerHTML));
+        // console.log(userRecordsArray[objIndex].balance)
+
+        if(editExpenseItem.value.length == 0 || editExpenseCost.value.length == 0){
+            alert("Please fill up all Fields")
+            editExpenseItem.focus();
+            event.preventDefault();
+        }else if(editExpenseCost.value <= 0){
+            alert("Expense Cost cannot be negative or equal to zero!")
+            editExpenseCost.focus();
+            event.preventDefault();
+        }else if(Number.parseFloat(editExpenseCost.value) > Number.parseFloat(editItemCost.innerHTML)){
+            //condition to remove the addtional expense cost into the current balance of user
+
+            let additionalExpenseCost = Number.parseFloat(editExpenseCost.value) - Number.parseFloat(editItemCost.innerHTML)
+            userRecordsArray[objIndex].balance = userRecordsArray[objIndex].balance - additionalExpenseCost;
+            // console.log(userRecordsArray[objIndex].balance);
+
+            let objIndex2 = userRecordsArray[objIndex].expenses.findIndex((obj => obj.item == editExpenseItem.value));
+            // console.log(objIndex2)
+
+            //putting the new values into localstorage
+            userRecordsArray[objIndex].expenses[objIndex2].item = editExpenseItem.value;
+            userRecordsArray[objIndex].expenses[objIndex2].cost = editExpenseCost.value;
+
+            localStorage.setItem('userRecords', JSON.stringify(userRecordsArray)) 
+            window.location.reload()
+            
+            
+        }else if(Number.parseFloat(editExpenseCost.value) < Number.parseFloat(editItemCost.innerHTML)){
+            //condition to add the subtracted expense cost into the current balance of user
+
+            let subtractedExpenseCost = Number.parseFloat(editItemCost.innerHTML) - Number.parseFloat(editExpenseCost.value)
+            userRecordsArray[objIndex].balance = userRecordsArray[objIndex].balance + subtractedExpenseCost;
+            // console.log(userRecordsArray[objIndex].balance);
+            // console.log(subtractedExpenseCost)
+
+            let objIndex2 = userRecordsArray[objIndex].expenses.findIndex((obj => obj.item == editExpenseItem.value));
+
+            //putting the new values into localstorage
+            userRecordsArray[objIndex].expenses[objIndex2].item = editExpenseItem.value;
+            userRecordsArray[objIndex].expenses[objIndex2].cost = editExpenseCost.value;
+
+            localStorage.setItem('userRecords', JSON.stringify(userRecordsArray)) 
+            window.location.reload()
+        }
+        
+    })
     toggleModalEditExpense();
     btnCloseModalEditExpense.addEventListener("click", toggleModalEditExpense);
 }
