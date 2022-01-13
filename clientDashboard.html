@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <div class="seven">
-                        <button class="btn btn-history show-modal-history"> <img src="./images/icons8-activity-history-32.png" alt="moreinfo"> <div class="btn-history-label">Transaction History</div></button>
+                        <button class="btn btn-history show-modal-transaction-history"> <img src="./images/icons8-activity-history-32.png" alt="moreinfo"> <div class="btn-history-label">Transaction History</div></button>
                         <!-- <div class="history">History</div> -->  
                         
                     </div>
@@ -195,6 +195,224 @@
             </form>
         </div>
         <div class="overlay-editExpense hidden"></div>
+        <!--End of Add Expense Modal-->
+
+        <!-- the modal itself -->
+        <div class="modal-transaction-history hidden">
+                   
+            <button class="close-modal-transaction-history">&times;</button>
+ 
+            <h1 id="TransactionLabel">Transaction History</h1><br>
+
+            <div class="tabContainer">
+                <div class="buttonContainer">
+                    <button class="deposit-tab">Deposit</button>
+                    <button class="withdrawal-tab">Withdrawal</button>
+                    <button class="send-money-tab">Send Money</button>
+                
+                </div>
+                <div class="deposit-tab-panel">
+                    <div class="add-board">
+                        <table class="styled-table-history">
+                            <thead>
+                                <th>Transaction Number</th>
+                                <th>Date</th>
+                                <th>Beginning Balance</th>
+                                <th>Deposit</th>
+                                <th>Ending Balance</th>
+                            </thead>
+                            <tbody id="HistoryTableBody">
+                                <tr>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                    <td>Germany</td>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                  
+                                  </tr>
+                                  <tr>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    <td>Mexico</td>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                    <td>Germany</td>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                  
+                                  </tr>
+                                  <tr>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    <td>Mexico</td>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                    <td>Germany</td>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                  
+                                  </tr>
+                                  <tr>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    <td>Mexico</td>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    
+                                  </tr>
+                                  
+                                <!--localstorage-->
+                            </tbody>
+                        
+                        </table>
+                    </div>
+                </div>
+                <div class="withdrawal-tab-panel hidden">
+                    <div class="add-board">
+                        <table class="styled-table-history">
+                            <thead>
+                                <th>Transaction Number</th>
+                                <th>Date</th>
+                                <th>Beginning Balance</th>
+                                <th>Deposit</th>
+                                <th>Ending Balance</th>
+                            </thead>
+                            <tbody id="HistoryTableBody">
+                                <tr>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                    <td>Germany</td>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                  
+                                  </tr>
+                                  <tr>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    <td>Mexico</td>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                    <td>Germany</td>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                  
+                                  </tr>
+                                  <tr>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    <td>Mexico</td>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                    <td>Germany</td>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                  
+                                  </tr>
+                                  <tr>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    <td>Mexico</td>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    
+                                  </tr>
+                                  
+                                <!--localstorage-->
+                            </tbody>
+                        
+                        </table>
+                    </div>
+                </div>
+                <div class="send-money-tab-panel hidden">
+                    <div class="add-board">
+                        <table class="styled-table-history">
+                            <thead>
+                                <th>Transaction Number</th>
+                                <th>Date</th>
+                                <th>Reciever Name</th>
+                                <th>Account #</th>
+                                <th>Amount Sent</th>
+                            </thead>
+                            <tbody id="HistoryTableBody">
+                                <tr>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                    <td>Germany</td>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                  
+                                  </tr>
+                                  <tr>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    <td>Mexico</td>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                    <td>Germany</td>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                  
+                                  </tr>
+                                  <tr>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    <td>Mexico</td>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                    <td>Germany</td>
+                                    <td>Alfreds Futterkiste</td>
+                                    <td>Maria Anders</td>
+                                  
+                                  </tr>
+                                  <tr>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    <td>Mexico</td>
+                                    <td>Centro </td>
+                                    <td>Francisco Chang</td>
+                                    
+                                  </tr>
+                                  
+                                <!--localstorage-->
+                            </tbody>
+                        
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="overlay-transaction-history hidden"></div>
         <!--End of Add Expense Modal-->
 
         </header>

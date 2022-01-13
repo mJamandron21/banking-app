@@ -89,3 +89,9 @@ export const formAddExpense = document.querySelector(".formAddExpense");
 export const addExpenseItem = document.querySelector("#add-expense-item");
 export const addExpenseCost = document.querySelector("#add-expense-cost");
 export const submitAddExpense = document.querySelector("#submit-add-expense");
+
+//transaction history modal
+export const modalTransactionHistory = document.querySelector(".modal-transaction-history");
+export const overlayTransactionHistory = document.querySelector(".overlay-transaction-history");
+export const btnCloseModalTransactionHistory = document.querySelector(".close-modal-transaction-history");
+export const btnOpenModalTransactionHistory = document.querySelector(".show-modal-transaction-history");

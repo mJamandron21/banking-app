@@ -711,14 +711,12 @@ label {
 
 .one{
     grid-area: one;
-    /* background-image: url("./images/dark-violet-lines.jpg");
+    background-image: url("/images/dark-violet-lines.jpg");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat; */
-    background: rgb(2,0,36); 
+    background-repeat: no-repeat;
+    /* background: rgb(2,0,36);  */
     /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(45,44,98,1) 51%, rgba(45,44,98,1) 87%); */
-    /* background: rgb(250,103,109); */
-    /* background: linear-gradient(166deg, rgba(250,103,109,1) 17%, rgba(86,84,179,1) 52%, rgba(45,44,98,1) 100%); */
 }
 
 .two{
@@ -874,6 +872,7 @@ label {
 .one .footer .visa{
     padding-right: 30px;
     font-size: 1.5rem;
+    font-weight: bolder;
 }
 
 .six .header{
@@ -1498,4 +1497,135 @@ label {
     cursor: pointer;
     border: none;
     background: none;
+}
+
+/*modal transaction history*/
+#right {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.modal-transaction-history {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 4rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+#TransactionLabel {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+    color: var(--primary-color);
+    text-shadow: var(--box-shadow);
+}
+
+.overlay-transaction-history {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+}
+  
+.close-modal-transaction-history {
+    position: absolute;
+    top: 0.8rem;
+    right: 1.3rem;
+    font-size: 2.5rem;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* tabs transaction history*/
+.tabContainer{
+    width: 100%;
+    height: 350px;
+    font-family: 'Montserrat', sans-serif;
+}
+.tabContainer .buttonContainer{
+    height: 15%;
+}
+.tabContainer .buttonContainer button{
+    width: 33%;
+    /* height: 100%; */
+    display: inline-flex;
+    text-align: center;
+    justify-content: space-evenly;
+    border: none;
+    border-radius: 50px;
+    outline:none;
+    cursor: pointer;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+}
+.tabContainer .buttonContainer button:hover{
+   
+    transform: scale(1.2);
+}
+.tabContainer .tabPanel{
+    /* height: 85%; */
+    background-color: white;
+    color: #2d2c62;
+    text-align: center;
+    padding-top: 105px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 22px;
+
+}
+
+.styled-table-history {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 100%;
+    min-width: 400px;
+    /* overflow: hidden; */
+    padding-top: 0;
+    
+}
+
+.styled-table-history thead tr {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.styled-table-history th{
+    padding: 12px 15px;
+    text-align: center;
+    color: white;
+    font-weight: normal;
+}
+.styled-table-history td {
+    padding: 12px 15px;
+    text-align: center;
+    color: #2d2c62;
+}
+.styled-table-history tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table-history tbody tr:nth-of-type(even) {
+    background-color: var(--alice-blue);
+}
+
+.styled-table-history tbody tr:last-of-type {
+    border-bottom: 1px solid white;
 }

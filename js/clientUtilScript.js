@@ -24,6 +24,11 @@ import { overlayAddExpense } from './domVariables.js'
 import { btnCloseModalAddExpense } from './domVariables.js'
 import { btnOpenModalAddExpense } from './domVariables.js'
 
+//modal transaction history
+import { modalTransactionHistory } from './domVariables.js'
+import { overlayTransactionHistory } from './domVariables.js'
+import { btnCloseModalTransactionHistory } from './domVariables.js'
+import { btnOpenModalTransactionHistory } from './domVariables.js'
 
 
 const toggleModalDeposit = function () {
@@ -58,8 +63,23 @@ const toggleModalAddExpense = function () {
   btnCloseModalAddExpense.addEventListener("click", toggleModalAddExpense);
   overlayAddExpense.addEventListener("click", toggleModalAddExpense);
 
+const toggleModalTransactionHistory = function () {
+  modalTransactionHistory.classList.toggle("hidden");
+  overlayTransactionHistory.classList.toggle("hidden");
+    };
+  btnOpenModalTransactionHistory.addEventListener("click", toggleModalTransactionHistory);
+  btnCloseModalTransactionHistory.addEventListener("click", toggleModalTransactionHistory);
+  overlayTransactionHistory.addEventListener("click", toggleModalTransactionHistory);
+
 export const toggleModalSendmoneyConfirm = function (event) {
   modalSendmoneyConfirm.classList.toggle("hidden");
   overlaySendmoneyConfirm.classList.toggle("hidden");
   };
   overlaySendmoneyConfirm.addEventListener("click", toggleModalSendmoneyConfirm);
+
+
+
+
+
+
+  

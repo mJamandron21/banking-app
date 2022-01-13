@@ -172,8 +172,6 @@ function editExpense(){
 }
 
 
-
-
 function toggleModalEditExpense() {
     modalEditExpense.classList.toggle("hidden");
     overlayEditExpense.classList.toggle("hidden");
