@@ -9,7 +9,9 @@ export function userRecordsInitialLoad(){
   let email = "mjamandron@gmail.com"
   let balance = 0
   let expenses = []
-  let history = []
+  let depositHistory = []
+  let withdrawalHistory = []
+  let sendMoneyHistory = []
   let role = "admin"
   let status = "Active"
   
@@ -22,7 +24,9 @@ export function userRecordsInitialLoad(){
         "email" : email,
         "balance" : balance,
         "expenses" : expenses,
-        "history": history,
+        "depositHistory": depositHistory,
+        "withdrawalHistory": withdrawalHistory,
+        "sendMoneyHistory": sendMoneyHistory,
         "role": role,
         "status": status
         

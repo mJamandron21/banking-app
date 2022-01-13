@@ -57,7 +57,9 @@ else{
     let accountnumber = Math.floor(1000000000000000 + Math.random() * 9000000000000000);
     let balance = 0
     let expenses = []
-    let history = []
+    let depositHistory = []
+    let withdrawalHistory = []
+    let sendMoneyHistory = []
     let role = "user"
     let status = "Active"
     
@@ -70,7 +72,9 @@ else{
             "email" : registerEmail.value,
             "balance" : balance,
             "expenses" : expenses,
-            "history" : history,
+            "depositHistory": depositHistory,
+            "withdrawalHistory": withdrawalHistory,
+            "sendMoneyHistory": sendMoneyHistory,
             "role": role,
             "status": status
         })
