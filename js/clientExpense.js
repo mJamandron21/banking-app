@@ -130,10 +130,10 @@ function editExpense(){
             alert("Expense Cost cannot be negative or equal to zero!")
             editExpenseCost.focus();
             event.preventDefault();
-        }else if(Number.parseFloat(editExpenseCost.value) > Number.parseFloat(editItemCost.innerHTML)){
+        }else if(Number.parseFloat(editExpenseCost.value) > Number.parseFloat(editItemCost.innerHTML)){ //sample 200-100 = 100
             //condition to remove the addtional expense cost into the current balance of user
 
-            let additionalExpenseCost = Number.parseFloat(editExpenseCost.value) - Number.parseFloat(editItemCost.innerHTML)
+            let additionalExpenseCost = Number.parseFloat(editExpenseCost.value) - Number.parseFloat(editItemCost.innerHTML)//sample 200-100 = 100
             userRecordsArray[objIndex].balance = userRecordsArray[objIndex].balance - additionalExpenseCost;
             // console.log(userRecordsArray[objIndex].balance);
 
@@ -148,10 +148,10 @@ function editExpense(){
             window.location.reload()
             
             
-        }else if(Number.parseFloat(editExpenseCost.value) < Number.parseFloat(editItemCost.innerHTML)){
+        }else if(Number.parseFloat(editExpenseCost.value) < Number.parseFloat(editItemCost.innerHTML)){ //sample 100-200 = -100
             //condition to add the subtracted expense cost into the current balance of user
 
-            let subtractedExpenseCost = Number.parseFloat(editItemCost.innerHTML) - Number.parseFloat(editExpenseCost.value)
+            let subtractedExpenseCost = Number.parseFloat(editItemCost.innerHTML) - Number.parseFloat(editExpenseCost.value) //sample 200-100 = 100
             userRecordsArray[objIndex].balance = userRecordsArray[objIndex].balance + subtractedExpenseCost;
             // console.log(userRecordsArray[objIndex].balance);
             // console.log(subtractedExpenseCost)
