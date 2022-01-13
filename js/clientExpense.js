@@ -6,6 +6,7 @@ const addExpenseCost = document.querySelector("#add-expense-cost");
 const submitAddExpense = document.querySelector("#submit-add-expense");
 
 const itemCostBanner = document.querySelector(".item-cost-banner");
+const expenseTable = document.querySelector('.styled-table-expense');
 
 //edit expense modal
 const modalEditExpense = document.querySelector(".modal-editExpense");
@@ -55,7 +56,9 @@ function deleteExpense(index){
 
     if(confirm("Are you sure you want to delete?")){
 
-        var table = document.querySelector('.styled-table-expense'),rowIndex;
+        var table = expenseTable
+        var rowIndex;
+        //https://www.w3schools.com/jsref/coll_table_rows.asp (Source)
 
         for(var i = 0; i < table.rows.length;i++){
             table.rows[i].onclick = function(){
@@ -94,7 +97,9 @@ function deleteExpense(index){
 }
 
 function editExpense(){
-    var table = document.querySelector('.styled-table-expense'),rowIndex;
+    var table = expenseTable
+    var rowIndex;
+    //https://www.w3schools.com/jsref/coll_table_rows.asp (Source)
     
         for(var i = 0; i < table.rows.length;i++){
         table.rows[i].onclick = function(){
