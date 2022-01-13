@@ -65,10 +65,6 @@ export function deposit(){
         alert("Negative amount is not allowed!");
         amountDeposit.focus();
         event.preventDefault();
-    }else if(isNaN(amountDeposit.value)){
-        alert("Letters are not allowed!");
-        amountDeposit.focus();
-        event.preventDefault();
     }else if(amountDeposit.value.length != 0){
         let getUserRecords = localStorage.getItem("userRecords");  
         let userRecordsArray = new Array(); 
@@ -114,10 +110,6 @@ export function withdrawal(){
         event.preventDefault();
     }else if(amountWithdraw.value < 0){
         alert("Negative amount is not allowed!")
-        amountWithdraw.focus();
-        event.preventDefault();
-    }else if(isNaN(amountWithdraw.value)){
-        alert("Letter is not allowed!");
         amountWithdraw.focus();
         event.preventDefault();
     }else if((amountWithdraw.value.length != 0  && amountWithdraw.value % 1 != 0) ||(amountWithdraw.value.length != 0  && amountWithdraw.value % 1 == 0)){
