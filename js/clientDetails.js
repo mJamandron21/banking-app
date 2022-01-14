@@ -225,6 +225,7 @@ export function sendMoney(){
             recipientName.innerHTML = recieverRecordsArray[0].reciever_name
             recipientAccountNumber.innerHTML = recieverRecordsArray[0].reciever_accountnumber
             recipientAmountToSend.innerHTML = recieverRecordsArray[0].reciever_amounttorecieve
+            
            
         }
 
