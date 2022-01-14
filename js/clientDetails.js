@@ -133,7 +133,7 @@ export function withdrawal(){
         userRecordsArray[objIndex].balance = totalAmount;
 
         clientBalance.innerHTML = userRecordsArray[objIndex].balance
-        //condition to add deposit history into localstorage
+        //condition to add withrawal history into localstorage
         let newWithdrawalHistory = new Array();
         let transactionNumber = Math.floor(10000000000 + Math.random() * 90000000000);
         let date = new Date().getFullYear()+'/'+(new Date().getMonth()+1)+'/'+new Date().getDate();
