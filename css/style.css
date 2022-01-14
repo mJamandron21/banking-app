@@ -711,7 +711,7 @@ label {
 
 .one{
     grid-area: one;
-    background-image: url("/images/dark-violet-lines.jpg");
+    background-image: url("/images/card.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
