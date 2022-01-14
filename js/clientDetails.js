@@ -79,6 +79,22 @@ export function deposit(){
         userRecordsArray[objIndex].balance = totalAmount;
     
         clientBalance.innerHTML = userRecordsArray[objIndex].balance; 
+
+        //condition to add deposit history into localstorage
+        let newDepositHistory = new Array();
+        let transactionNumber = Math.floor(10000000000 + Math.random() * 90000000000);
+        let date = new Date().getFullYear()+'/'+(new Date().getMonth()+1)+'/'+new Date().getDate();
+
+        newDepositHistory = {
+            "transactionNumber" : transactionNumber,
+            "date" : date,
+            "beginningBalance" : currentBalance,
+            "deposit" : amountDeposit.value,
+            "endingBalance": clientBalance.innerHTML
+
+        }
+
+        userRecordsArray[objIndex].depositHistory.push(newDepositHistory);
         localStorage.setItem("userRecords", JSON.stringify(userRecordsArray));
         
         alert("Deposit Transaction Successful")
