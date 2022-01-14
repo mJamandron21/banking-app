@@ -131,6 +131,23 @@ export function withdrawal(){
     }else if((amountWithdraw.value.length != 0  && amountWithdraw.value % 1 != 0) ||(amountWithdraw.value.length != 0  && amountWithdraw.value % 1 == 0)){
         var totalAmount = Number.parseFloat(currentBalance) - Number.parseFloat(amountWithdraw.value);
         userRecordsArray[objIndex].balance = totalAmount;
+
+        clientBalance.innerHTML = userRecordsArray[objIndex].balance
+        //condition to add deposit history into localstorage
+        let newWithdrawalHistory = new Array();
+        let transactionNumber = Math.floor(10000000000 + Math.random() * 90000000000);
+        let date = new Date().getFullYear()+'/'+(new Date().getMonth()+1)+'/'+new Date().getDate();
+
+        newWithdrawalHistory = {
+            "transactionNumber" : transactionNumber,
+            "date" : date,
+            "beginningBalance" : currentBalance,
+            "withdraw" : amountWithdraw.value,
+            "endingBalance": clientBalance.innerHTML
+
+        }
+
+        userRecordsArray[objIndex].withdrawalHistory.push(newWithdrawalHistory);
         localStorage.setItem("userRecords", JSON.stringify(userRecordsArray));
 
         alert("Withrawal Transaction Successful!")
